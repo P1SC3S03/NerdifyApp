@@ -40,7 +40,7 @@ function renderArtistBioEN(data) {
 //EXTRACT IMPORTANT ARTIST INFO
 function artistInfo(data) {
     const info = data.artists.map(art => {
-        if (JSON.stringify(art.strArtist).toLowerCase() === JSON.stringify(search)) {
+        if (JSON.stringify(art.strArtist).toLowerCase().includes(JSON.stringify(search))) {
             return {
                 name: art.strArtist, fanart: art.strArtistFanart, bioPT: art.strBiographyPT,
                 bioEN: art.strBiographyEN
@@ -52,6 +52,7 @@ function artistInfo(data) {
 }
 //RENDER IMAGE
 function renderImage(data) {
+    console.log(data);
     $('#home').html(`<div id="home-image"><img src="${data[0].fanart}"></div>`); //CHANGE HOME
 }
 
