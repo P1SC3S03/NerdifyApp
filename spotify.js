@@ -1,7 +1,7 @@
 $(document).ready(function () {
     const user ='soraiavmv';
     const url = 'https://open.spotify.com/user/';
-
+    console.log(url+user);
     fetch(url + user)
         .then(parseResponse)
         .then(cenas)
@@ -18,6 +18,7 @@ function parseResponse(response) {
 }
 
 function cenas(data) {
+    console.log(typeof data);
     console.log(data);
 }
 
