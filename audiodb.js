@@ -8,7 +8,7 @@ $(document).ready(function () {
         //.then(renderArtistBioPT)
         //.then(renderArtistBioEN)
         //.then(renderArtistCountry)
-        .then(renderArtistGenreAndStyle)
+        //.then(renderArtistGenreAndStyle)
         .catch(handleErrors);
 
 });
