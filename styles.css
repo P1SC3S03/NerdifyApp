@@ -1,4 +1,4 @@
-body{
+.login{
     background-image: url("https://cdn.pixabay.com/photo/2016/11/23/00/23/hands-1851426_960_720.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,4 +28,15 @@ body{
   color: #fff;
   font-family: 'Kaisei Opti', serif;
   left: 2px ;
+}
+.index{
+    background-image: linear-gradient(to right, black , rgb(103, 126, 113));
+}
+.tittle{
+    color:white;
+    font-size:25px;
+    position: relative;
+    left: 150px;
+    top:-100px;
+    font-family: 'Kaisei Opti', serif;
 }
