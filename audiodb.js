@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    search = 'coldplay'.toLowerCase(); // CHANGE TO USER INPUT
+    search = 'abba'.toLowerCase(); // CHANGE TO USER INPUT
     const searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s='; //API KEY = 523532 
     fetch(searchEndPoint + search)
         .then(parseResponse)
@@ -72,6 +72,7 @@ function artistInfo(data) {
     info.splice(1,1);
     return info;
 }
+
 //RENDER IMAGE
 function renderImage(data) {
     console.log(data);

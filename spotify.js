@@ -8,7 +8,6 @@ $(document).ready(function () {
         .catch(handleErrors);
 })
 
-
 // PARSE JSON 
 function parseResponse(response) {
     if (!response.ok) {
