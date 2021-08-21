@@ -56,6 +56,7 @@ function renderImage(data) {
     $('#home').html(`<div id="home-image"><img src="${data[0].fanart}"></div>`); //CHANGE HOME
 }
 
+//HANDLE ERRORS
 function handleErrors(error) {
     $('#home').html('<p style=“color: red;“>' + error + '</p>'); //CHANGE HOME
 }
