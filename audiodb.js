@@ -1,6 +1,6 @@
 $(document).ready(function () {
     search = 'abba'.toLowerCase(); // CHANGE TO USER INPUT
-    const searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s=';
+    const searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s='; //API KEY = 523532 
     fetch(searchEndPoint + search)
         .then(parseResponse)
         .then(artistInfo)
