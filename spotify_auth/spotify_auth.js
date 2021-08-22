@@ -1,7 +1,7 @@
 var redirect_uri = "http://127.0.0.1:5500/spotify_auth/spotify_auth.html";
 
-var client_id = ""; 
-var client_secret = ""; // In a real app you should not expose your client_secret to the user
+var client_id = "b1be58a2a84e423e88f88256823a1447"; 
+var client_secret = "557ccc7130b348bebf3134784a5af7e2"; // In a real app you should not expose your client_secret to the user
 
 var access_token = null;
 var refresh_token = null;
@@ -61,8 +61,8 @@ function getCode(){
 }
 
 function requestAuthorization(){
-    client_id = document.getElementById("clientId").value;
-    client_secret = document.getElementById("clientSecret").value;
+    client_id = "b1be58a2a84e423e88f88256823a1447";
+    client_secret = "557ccc7130b348bebf3134784a5af7e2";
     localStorage.setItem("client_id", client_id);
     localStorage.setItem("client_secret", client_secret); // In a real app you should not expose your client_secret to the user
 
