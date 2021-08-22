@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    const user ='soraiavmv';
-    const url = 'https://open.spotify.com/user/';
-    console.log(url+user);
-    fetch(url + user)
+    //const user ='soraiavmv';
+    //const url = 'https://open.spotify.com/user/';
+    const user = 'historic_instruments';
+    const url = 'https://api.spotify.com/v1/users/';
+
+    fetch(url+user)
         .then(parseResponse)
         .then(cenas)
         .catch(handleErrors);
