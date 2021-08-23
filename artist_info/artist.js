@@ -1,4 +1,4 @@
-const accessToken = 'BQCAwi_WWUYZRE2XrGX-uEVcj_zwjDaf2kQ5N98x-N5emq-wiMkycM2BfJQfhsWhlQrobAqiRq0ZvkMsTLq5M4CnThhIsqpDgsNIoYqYQRfOd4Md5WemWUzH1na6OBktvOzG-g2AoebyDKYzs5pVtSSjtkO4zP_xeIEEYEY0sMY';
+const accessToken = 'BQAGuupCHSYAu_gEU2OS6VT31pVv0r5CF673eTWXYUF1T_DHF5kw2DtPQTr4AMms0Zg6SnMe3y4-sllAFIB89os8LDzCMAbhLnxjiJN5Zzv0GtnPaNvJulNnQeZTSCToI64RBOjMf4Krn-fgxWLu4_LvjugnGbgb';
 
 window.onload = () => {
     const button = document.getElementById('button');
@@ -10,39 +10,37 @@ window.onload = () => {
 
 function searchArtist() {
     const input = document.getElementById('artist').value;
-    
+
     $.ajax({
         url: `https://api.spotify.com/v1/search?q=${input}&type=artist`,
         type: 'GET',
         headers: {
-            'Authorization' : 'Bearer ' + accessToken
+            'Authorization': 'Bearer ' + accessToken
         },
-        success: function(data) {
+        success: function (data) {
             document.body.append();
 
             console.log(data);
 
-           const ul = document.createElement('ul');
-           document.body.appendChild(ul);
+            const ul = document.createElement('ul');
+            document.body.appendChild(ul);
 
-           for (let i in data.artists.items) {
-                const li = document.createElement('li');
-                const img = document.createElement('img');
-                let id = data.artists.items[i].id;
-                console.log(i);
-                img.src = data.artists.items[i].images[2].url;
-                
-                
-                
-                img.onclick = function() {
-                    window.location.href = 'https://open.spotify.com/artist/'+ id;
-                    //data.artists.items[i].href; //See token
+            data.artists.items.forEach(element => {
+                if(element.images.length > 0) {
+                    const li = document.createElement('li');
+                    const img = document.createElement('img');
+                    let id = element.id;
+                    img.src = element.images[0].url;
+                    img.onclick = function () {
+                        window.location.href = 'https://open.spotify.com/artist/' + id;
+                        //data.artists.items[i].href; //See token
+                    }
+                    li.appendChild(img);
+    
+                    ul.appendChild(li);
                 }
-                li.appendChild(img);
-                
-                ul.appendChild(li);
-               }
-           }
-        })
-        .catch(error => console.error(error));
+            });
+        }
+    })
+    .catch(error => console.error(error))
 }
