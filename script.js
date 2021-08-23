@@ -18,18 +18,18 @@ $( document ).ready(function() {
 
   
     const accessToken = getUrlParameter('access_token');
-    
+    /*
     let client_id = 'b1be58a2a84e423e88f88256823a1447';
    
     // https://www.url-encode-decode.com/
     let redirect_uri = 'http%3A%2F%2F127.0.0.1%3A5500%2Fdashboard.html';
 
-    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
+    const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=${redirect_uri}`;
     
     if(accessToken == null || accessToken == "" || accessToken == undefined){
     window.location.replace(redirect);
     }
-
+  */
     
     $( "#search_button" ).click(function() {
      

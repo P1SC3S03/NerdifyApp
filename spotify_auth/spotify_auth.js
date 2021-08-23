@@ -5,8 +5,6 @@ var client_secret = "557ccc7130b348bebf3134784a5af7e2";
 
 
 const AUTHORIZE = "https://accounts.spotify.com/authorize"
-const TOKEN = "https://accounts.spotify.com/api/token";
-
 
 function requestAuthorization(){
     client_id = "b1be58a2a84e423e88f88256823a1447";
