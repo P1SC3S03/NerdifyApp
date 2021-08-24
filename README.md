@@ -1,6 +1,8 @@
 # Nerdify App
 
-Yes, I know, nobody every reads this...
+Yes, we know, nobody ever reads this... 🥱
+
+
 But, if you were strong and curious enough for this, congratulations! 🎉🥳
 
 We give you a warm welcome to Nerdify! 😊
