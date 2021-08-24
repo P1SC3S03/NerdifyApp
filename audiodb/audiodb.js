@@ -1,5 +1,3 @@
-let variable = '';
-
 $(document).ready(function () {
     search = 'abba'.toLowerCase(); // CHANGE TO USER INPUT
 
@@ -17,9 +15,8 @@ $(document).ready(function () {
     fetch(searchAlbumsByArtistURL + search)
         .then(parseResponse)
         .then(fetchAlbunsByArtist)
-        //.then(renderAlbumHTML)
+        .then(renderAlbumHTML)
         .catch(handleErrors);
-
 });
 
 // PARSE JSON 
@@ -43,31 +40,28 @@ function artistInfo(data) {
         }
     });
     artist.splice(1, 1);
-    variable = artist;
     return artist;
-}
-
-//Render Title
-function renderTitle(data){
-    const divTitle = document.createElement('div');
-    document.body.appendChild(divTitle);
-    const h1Title = document.createElement('h1');
-    divTitle.appendChild(h1Title);
-    h1Title.innerHTML = data[0].name;
-
 }
 
 //RENDER ARTIST HTML
 function renderArtistHTML(data) {
-    renderImage(data);
+    renderTitleAux(data);
+    renderArtistImage(data);
     renderArtistBioPT(data);
     renderArtistBioEN(data);
     renderArtistCountry(data);
     renderArtistGenreAndStyle(data);
-    renderTitle(data);
 }
 
-//FETCH ALBUNS BY ARTIST
+//RENDER ALBUMS HTML
+function renderAlbumHTML(data) {
+    renderAlbumName(data);
+    renderAlbumYear(data);
+    renderDescriptionEnglish(data);
+    renderDescriptionPortuguese(data);
+}
+
+//FETCH ALBUMS BY ARTIST
 function fetchAlbunsByArtist(data) {
     console.log(data);
 
@@ -90,15 +84,22 @@ function fetchAlbunsByArtist(data) {
 
 //HANDLE ERRORS
 function handleErrors(error) {
-    $('#home').html('<p style=“color: red;“>' + error + '</p>'); //CHANGE HOME
+    $('#home').html('<p style=“color: red;“>' + error + '</p>');
 }
 
 //------------------AUXILIAR METHODS--------------------//
 
-//RENDER IMAGE
-function renderImage(data) {
-    console.log(data);
-    $('#renderImage').html(`<div id="home-image"><img src="${data[0].fanart}"></div>`); //CHANGE HOME
+//----ARTIST----//
+
+//RENDER TITLE
+function renderTitleAux(data) {
+    let content = '<h3>'+data[0].name+'</h3>';
+    $('#renderTitle').html(content);
+}
+
+//RENDER ARTIST IMAGE
+function renderArtistImage(data) {
+    $('#renderImage').html(`<div id="home-image"><img src="${data[0].fanart}"></div>`);
 }
 
 //ARTIST BIO IN PORTUGUESE
@@ -107,16 +108,16 @@ function renderArtistBioPT(data) {
 
     content += `<p>${data[0].bioPT}</p>`;
 
-    $('#renderArtistBioPT').html(content); //CHANGE SKILLS TO OTHER
+    $('#renderArtistBioPT').html(content);
 }
 
 //ARTIST BIO IN ENGLISH
 function renderArtistBioEN(data) {
-    let content = '<h3>Biografia em Inglês</h3>';
+    let content = '<h3>Biography in English</h3>';
 
     content += `<p>${data[0].bioEN}</p>`;
 
-    $('#renderArtistBioEN').html(content); //CHANGE SKILLS TO OTHER
+    $('#renderArtistBioEN').html(content);
 }
 
 //ARTIST COUNTRY
@@ -125,7 +126,7 @@ function renderArtistCountry(data) {
 
     content += `<p>${data[0].country}: ${data[0].countryInit}</p>`;
 
-    $('#renderArtistCountry').html(content); //CHANGE SKILLS TO OTHER
+    $('#renderArtistCountry').html(content);
 }
 
 //ARTIST GENRE AND STYLE
@@ -134,8 +135,42 @@ function renderArtistGenreAndStyle(data) {
 
     content += `<p><b>Genre:</b> ${data[0].genre} <br><b>Style:</b> ${data[0].style}</p>`;
 
-    $('#renderArtistGenreAndStyle').html(content); //CHANGE SKILLS TO OTHER
+    $('#renderArtistGenreAndStyle').html(content);
+}
+
+//----ALBUM----//
+
+//ALBUM NAME
+function renderAlbumName(data) {
+    let content = '<h3>Album Name</h3>';
+
+    content += `<p>${data[0].albumName}</p>`;
+
+    $('#renderAlbumName').html(content);
 }
 
 
+//ALBUM YEAR
+function renderAlbumYear(data) {
+    let content = `<p><b>Album Year: </b>${data[0].releaseYear}</p>`;
 
+    $('#renderAlbumYear').html(content);
+}        
+
+//ALBUM DESCRIPTION ENGLISH 
+function renderDescriptionEnglish(data) {
+    let content = '<h3>Album Description English</h3>';
+
+    content += `<p>${data[0].descriptionEN}</p>`;
+
+    $('#renderAlbumDescriptionEN').html(content);
+}
+
+//ALBUM DESCRIPTION PORTUGUESE
+function renderDescriptionPortuguese(data) {
+    let content = '<h3>Descrição do Album em Português</h3>';
+
+    content += `<p>${data[0].descriptionPT}</p>`;
+
+    $('#renderAlbumDescriptionPT').html(content);
+}
