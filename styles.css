@@ -20,6 +20,8 @@
     }
     
     #header-title {
+        height: 70px;
+        text-align: center;
         font-family: 'Nothing You Could Do', cursive;
     }
 
@@ -69,6 +71,13 @@
 .title{
     color:gray;
     font-family: 'Kaisei Opti', serif;
+}
+
+#search-text {
+    border-radius: 5px;
+}
+#search_button{
+    border-radius: 5px;
 }
 
 
