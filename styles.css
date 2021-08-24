@@ -71,3 +71,43 @@
     top:-100px;
     font-family: 'Kaisei Opti', serif;
 }
+
+
+/*
+.footer {
+    padding: 1rem 0.5rem 3rem;
+    display: block;
+    width: 50%;
+}
+*/
+
+#pedro {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  margin: 0 auto;
+}
+
+#pedro:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+#feedback{
+    
+    margin-right: 70px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+}
