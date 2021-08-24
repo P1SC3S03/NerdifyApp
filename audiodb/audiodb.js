@@ -17,7 +17,7 @@ $(document).ready(function () {
     fetch(searchAlbumsByArtistURL + search)
         .then(parseResponse)
         .then(fetchAlbunsByArtist)
-        .then(renderAlbumHTML)
+        //.then(renderAlbumHTML)
         .catch(handleErrors);
 
 });
@@ -32,7 +32,7 @@ function parseResponse(response) {
 
 //EXTRACT IMPORTANT ARTIST INFO
 function artistInfo(data) {
-    const info = data.artists.map(artist => {
+    const artist = data.artists.map(artist => {
         if (JSON.stringify(artist.strArtist).toLowerCase().includes(JSON.stringify(search))) {
             return {
                 id: artist.idArtist, name: artist.strArtist, fanart: artist.strArtistFanart,
@@ -42,9 +42,19 @@ function artistInfo(data) {
             }
         }
     });
-    info.splice(1, 1);
-    variable = info;
-    return info;
+    artist.splice(1, 1);
+    variable = artist;
+    return artist;
+}
+
+//Render Title
+function renderTitle(data){
+    const divTitle = document.createElement('div');
+    document.body.appendChild(divTitle);
+    const h1Title = document.createElement('h1');
+    divTitle.appendChild(h1Title);
+    h1Title.innerHTML = data[0].name;
+
 }
 
 //RENDER ARTIST HTML
@@ -54,6 +64,7 @@ function renderArtistHTML(data) {
     renderArtistBioEN(data);
     renderArtistCountry(data);
     renderArtistGenreAndStyle(data);
+    renderTitle(data);
 }
 
 //FETCH ALBUNS BY ARTIST
@@ -87,25 +98,25 @@ function handleErrors(error) {
 //RENDER IMAGE
 function renderImage(data) {
     console.log(data);
-    $('#home').html(`<div id="home-image"><img src="${data[0].fanart}"></div>`); //CHANGE HOME
+    $('#renderImage').html(`<div id="home-image"><img src="${data[0].fanart}"></div>`); //CHANGE HOME
 }
 
 //ARTIST BIO IN PORTUGUESE
 function renderArtistBioPT(data) {
-    let content = '<h3>Bio</h3>';
+    let content = '<h3>Biografia em Português</h3>';
 
     content += `<p>${data[0].bioPT}</p>`;
 
-    $('#skills').html(content); //CHANGE SKILLS TO OTHER
+    $('#renderArtistBioPT').html(content); //CHANGE SKILLS TO OTHER
 }
 
 //ARTIST BIO IN ENGLISH
 function renderArtistBioEN(data) {
-    let content = '<h3>Bio</h3>';
+    let content = '<h3>Biografia em Inglês</h3>';
 
     content += `<p>${data[0].bioEN}</p>`;
 
-    $('#skills').html(content); //CHANGE SKILLS TO OTHER
+    $('#renderArtistBioEN').html(content); //CHANGE SKILLS TO OTHER
 }
 
 //ARTIST COUNTRY
@@ -114,7 +125,7 @@ function renderArtistCountry(data) {
 
     content += `<p>${data[0].country}: ${data[0].countryInit}</p>`;
 
-    $('#skills').html(content); //CHANGE SKILLS TO OTHER
+    $('#renderArtistCountry').html(content); //CHANGE SKILLS TO OTHER
 }
 
 //ARTIST GENRE AND STYLE
@@ -123,7 +134,7 @@ function renderArtistGenreAndStyle(data) {
 
     content += `<p><b>Genre:</b> ${data[0].genre} <br><b>Style:</b> ${data[0].style}</p>`;
 
-    $('#skills').html(content); //CHANGE SKILLS TO OTHER
+    $('#renderArtistGenreAndStyle').html(content); //CHANGE SKILLS TO OTHER
 }
 
 
