@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    search = 'Eminem'.toLowerCase(); // CHANGE TO USER INPUT
+    search = 'abba'.toLowerCase(); // CHANGE TO USER INPUT
 
     //API KEY = 523532
 
@@ -93,13 +93,13 @@ function handleErrors(error) {
 
 //RENDER TITLE
 function renderTitleAux(data) {
-    let content = '<h3 id ="titleRender">'+data[0].name+'</h3>';
+    let content = '<h3>'+data[0].name+'</h3>';
     $('#renderTitle').html(content);
 }
 
 //RENDER ARTIST IMAGE
 function renderArtistImage(data) {
-    $('#renderImage').html(`<div id="home-image"><img id="image" src="${data[0].fanart}"></div>`);
+    $('#renderImage').html(`<div id="home-image"><img src="${data[0].fanart}"></div>`);
 }
 
 //ARTIST BIO IN PORTUGUESE
