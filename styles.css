@@ -35,6 +35,7 @@
     background-size: cover;
 }
 
+/*
 .searchText{
     position: relative;
     top: 200px;
@@ -42,10 +43,14 @@
     color:white;
     text-align: center;
 }
+*/
 
 .image{
     position: relative;
     top: 300px;
+    text-align: center;
+}
+#search-bar{
     text-align: center;
 }
 
@@ -110,4 +115,7 @@
     bottom: 0;
     width: 100%;
     height: 2.5rem;            /* Footer height */
+}
+#p-footer{
+    text-align: center;
 }
