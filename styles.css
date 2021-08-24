@@ -1,5 +1,6 @@
     .header {
-    background-image: url("img/speaker-music-blue2.jpg");
+   /*  background-image: url("img/speaker-music-blue2.jpg"); */
+    background-color: black;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -12,13 +13,16 @@
     }
     
     #header-image {
-        height: 70px;
-        width: 60px;
+        height: 100px;
+        width: 100px;
         margin-bottom: 5px;
-        border-radius: 1rem;
+        border-radius: 1rem; /*What does this exactly do???*/
     }
     
-    #header-title,
+    #header-title {
+        font-family: 'Nothing You Could Do', cursive;
+    }
+
     #header-subtitle-1,
     #header-subtitle-2 {
         color: rgb(255, 255, 255);
@@ -28,12 +32,6 @@
         margin-bottom: 30px;
         font-size: 50px;
     }
-
-.login{
-    background-image: url("https://cdn.pixabay.com/photo/2016/11/23/00/23/hands-1851426_960_720.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 /*
 .searchText{
