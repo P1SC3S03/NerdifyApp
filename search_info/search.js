@@ -49,6 +49,7 @@ $(document).ready(function () {
                 document.getElementById(`transcript`).value
                     = e.results[0][0].transcript;
                 recognition.stop();
+                // VARIAVEL COM O SEARCH-SPEECH AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
                 let search = document.getElementById(`transcript`).value;
                 let searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s='+ search;
                 console.log(searchEndPoint)
