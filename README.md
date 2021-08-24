@@ -1,17 +1,17 @@
 # Nerdify App
 
 Yes, I know, nobody every reads this...
-But, if you were strong and curious enough for this, congratulations!
+But, if you were strong and curious enough for this, congratulations! 🎉🥳
 
-We give you a warm welcome to Nerdify! :)
+We give you a warm welcome to Nerdify! 😊
 
-Nerdify is a WEB App made with ❤ using two APIs to retrieve the best information of your favorite artists and albums.
+Nerdify is a WEB App made with ❤️ using two APIs to retrieve the best information of your favorite artists and albums.
 
-Along the way, for our geek, smart and curious teacher and colleagues, there are some hidden surprises... ^^ We really had to!
+Along the way, for our geek, smart and curious teacher and colleagues, there are some hidden surprises... 😉 We really had to!
 
 Hopefully you like it as much as we've liked making it! 
 
-STAY NERD @ HEART, JOIN US @ NERDIFY! <3
+STAY NERD @ ❤️, JOIN US @ NERDIFY! ❤️
 
 --------------------------------------------------------------------------------------Web App using two external APIs
 
@@ -25,7 +25,7 @@ https://developer.spotify.com/documentation/general/guides/scopes/
 https://www.theaudiodb.com/api_guide.php1
 
 --------------------------------------------------------------------------------------
-Context on title font in dashboard:
+✍️ Context on title font in dashboard:
 
 Nothing You Could Do --> Yes, Soraia, 'IT IS WHAT IT IS'! :D 
 
