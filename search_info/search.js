@@ -26,6 +26,42 @@ $(document).ready(function () {
     if (accessToken == null || accessToken == "" || accessToken == undefined) {
       window.location.replace(redirect);
     }
+
+
+    $(document).keyup(function(event) { 
+      event.preventDefault();
+      if (event.keyCode === 13) { 
+          $("#search_button").click(); 
+      } 
+  }); 
+
+
+  
+  $("#microphone-image").on("click", function() {
+    function startDictation() {
+        if (window.hasOwnProperty(`webkitSpeechRecognition`)) {
+            var recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = "en-US";
+            recognition.start();
+            recognition.onresult = function (e) {
+                document.getElementById(`transcript`).value
+                    = e.results[0][0].transcript;
+                recognition.stop();
+                // VARIAVEL COM O SEARCH-SPEECH AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+                let search = document.getElementById(`transcript`).value;
+                let searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s='+ search;
+                console.log(searchEndPoint)
+               
+            };
+            recognition.onerror = function (e) {
+                recognition.stop();
+            }
+        }
+    }
+    startDictation();
+}); 
   
   
     $("#search_button").click(function () {
