@@ -4,7 +4,7 @@ Yes, we know, nobody ever reads this... 🥱
 
 But, if you were strong and curious enough for this, congratulations! 🎉🥳
 
-We give you a warm welcome to Nerdify! 😊
+We give you a warm welcome to Nerdify! 🤓😊
 
 Nerdify is a Web App made with ❤️ using two APIs to retrieve the best information of your favorite artists and albums.
 
