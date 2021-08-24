@@ -26,6 +26,14 @@ $(document).ready(function () {
     if (accessToken == null || accessToken == "" || accessToken == undefined) {
       window.location.replace(redirect);
     }
+
+
+    $(document).keyup(function(event) { 
+      event.preventDefault();
+      if (event.keyCode === 13) { 
+          $("#search_button").click(); 
+      } 
+  }); 
   
   
     $("#search_button").click(function () {
