@@ -1,6 +1,6 @@
     .header {
-   /*  background-image: url("img/speaker-music-blue2.jpg"); */
-    background-color: black;
+    /* background-image: url("img/LoginImage.jpg"); */
+    background-color: gray; 
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,16 +13,21 @@
     }
     
     #header-image {
-        height: 100px;
-        width: 100px;
+        height: 75px;
+        width: 75px;
         margin-bottom: 5px;
-        border-radius: 1rem; /*What does this exactly do???*/
+        margin-top: 5px;
+        border-radius: 8px; 
     }
     
     #header-title {
+        color: white;
+        opacity: 0.8;
         height: 70px;
         text-align: center;
         font-family: 'Nothing You Could Do', cursive;
+        margin-bottom: 30px;
+        font-size: 50px;
     }
 
     #header-subtitle-1,
@@ -30,11 +35,6 @@
         color: rgb(255, 255, 255);
     }
     
-    #header-title {
-        margin-bottom: 30px;
-        font-size: 50px;
-    }
-
 /*
 .searchText{
     position: relative;
@@ -42,8 +42,8 @@
     font-family: 'Kaisei Opti', serif;
     color:white;
     text-align: center;
-}
-*/
+}*/
+
 
 .image{
     position: relative;
@@ -51,7 +51,8 @@
     text-align: center;
 }
 #search-bar{
-    text-align: center;
+    text-align: right;
+    margin-right: 30px;
 }
 
 .button{
@@ -117,7 +118,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;            /* Footer height */
+    height: 2.5rem;           
 }
 #p-footer{
     text-align: center;
