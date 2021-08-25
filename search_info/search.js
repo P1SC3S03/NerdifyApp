@@ -36,24 +36,20 @@ $(document).ready(function () {
   }); 
 
 
-  
   $("#microphone-image").on("click", function() {
     function startDictation() {
-        if (window.hasOwnProperty(`webkitSpeechRecognition`)) {
-            var recognition = new webkitSpeechRecognition();
+      if (window.hasOwnProperty("webkitSpeechRecognition")) {
+          var recognition = new webkitSpeechRecognition();
             recognition.continuous = false;
             recognition.interimResults = false;
             recognition.lang = "en-US";
             recognition.start();
             recognition.onresult = function (e) {
-                document.getElementById(`transcript`).value
+                document.getElementById("search-text").value
                     = e.results[0][0].transcript;
-                recognition.stop();
-                // VARIAVEL COM O SEARCH-SPEECH AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-                let search = document.getElementById(`transcript`).value;
-                let searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s='+ search;
-                console.log(searchEndPoint)
-               
+                recognition.stop();                
+                /* let search = document.getElementById("search-text").value;
+                let searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s='+ search; */
             };
             recognition.onerror = function (e) {
                 recognition.stop();
@@ -75,9 +71,7 @@ $(document).ready(function () {
         headers: {
           'Authorization': 'Bearer ' + accessToken
         },
-        success: function (data) {
-          console.log(data)
-  
+        success: function (data) {  
           let num_of_tracks = data.tracks.items.length;
           let count = 0;
   
