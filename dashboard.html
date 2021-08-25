@@ -23,52 +23,34 @@
   </header>   
     
   <main>
-    <div class="columns">
-      <div class="col-1">
-        <p>
-          Amongst the hundreds of thousands of symbols which are in the unicode text specifications are certain characters which resemble, or are variations of the alphabet and other keyword symbols. For example, if we can take the phrase "thug life" and convert its characters into the fancy letters "𝖙𝖍𝖚𝖌 𝖑𝖎𝖋𝖊" which are a set of unicode symbols. These different sets of fancy text letters are scattered all throughout the unicode specification, and so to create a fancy text translator, it's just a matter of finding these sets of letters and symbols, and linking them to their normal alphabetical equivalents.
-        </p>
     <div>
       <div id="search-bar">
         <div>
           <img id="microphone-image" class="is-right" onclick="startDictation()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/256px-Google_mic.svg.png"> 
           <input type="text" id="search-text" placeholder="Search..."/>
           <button id="search_button" type="button">&#129488</button>
-
       </div>
-      <div class="col-2">
-        <div id="search-bar">
-            <img id="microphone-image" onclick="startDictation()" src="img/Google_mic.svg.png" height="25" width="25"> 
-            <input type="text" id="search-text" placeholder="Search ..."/>
-            <button id="search_button" type="button">&#129488</button>
+      <div class="container" id="song-list">
+        <div class="row">
+          <div id="song_0" class="col"></div>
+          <div id="song_1" class="col"></div>
+          <div id="song_2" class="col"></div>
         </div>
-        <div class="container-1" id="song-list"> <!-- ver aqui-->
-          <div class="row">
-            <div id="song_0" class="col"></div>
-            <div id="song_1" class="col"></div>
-            <div id="song_2" class="col"></div>
-          </div>
-          <div class="row">
-            <div id="song_3" class="col"></div>
-            <div id="song_4" class="col"></div>
-            <div id="song_5" class="col"></div>
-          </div>
+        <div class="row">
+          <div id="song_3" class="col"></div>
+          <div id="song_4" class="col"></div>
+          <div id="song_5" class="col"></div>
+        </div>
+        <div class="row">
+          <div id="song_6" class="col"></div>
+          <div id="song_7" class="col"></div>
+          <div id="song_8" class="col"></div>
         </div>
       </div>
     </div>
-  </main>
-  
-
-  <footer id="footer" class="center" >
-    <div class="footer-div">
-        <p id="p-footer"class="center"><strong>Mindswapp-App</strong> is made up with two APIs to retrieve the best information of your favorite artists!</p>
-        <FORM Action="mailto:pedrobboard@hotmail.com?Subject=Some+Test+Subject" METHOD="POST">
-          <INPUT id='pedro' class="center" type="image" src="img/pedro.jpg"/>
-        </FORM>
-        <p id="feedback" class="center">Send Us Feedback!</p>
-  </footer>
 
 
+    
     <div>
 
     </div>
@@ -85,11 +67,10 @@
           </form>
           <p id="feedback" class="center">Send Us Feedback!</p>
     </footer>
-
   
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/search_info/search.js" charset="utf-8"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/search_info/search.js" charset="utf-8"></script>
 </body>
 
 </html>
