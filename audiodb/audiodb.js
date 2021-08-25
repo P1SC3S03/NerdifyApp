@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    search = 'Eminem'.toLowerCase(); // CHANGE TO USER INPUT
+    search = 'abba'.toLowerCase(); // CHANGE TO USER INPUT
 
     //API KEY = 523532
 
@@ -108,7 +108,7 @@ function renderArtistBioPT(data) {
 
     content += `<p>${data[0].bioPT}</p>`;
 
-    $('#renderArtistBioPT').html(content);
+    $('#BiografiaEmPortuguês').html(content);
 }
 
 //ARTIST BIO IN ENGLISH
@@ -117,7 +117,7 @@ function renderArtistBioEN(data) {
 
     content += `<p>${data[0].bioEN}</p>`;
 
-    $('#renderArtistBioEN').html(content);
+    $('#BiographyInEnglish').html(content);
 }
 
 //ARTIST COUNTRY
@@ -126,7 +126,7 @@ function renderArtistCountry(data) {
 
     content += `<p>${data[0].country}: ${data[0].countryInit}</p>`;
 
-    $('#renderArtistCountry').html(content);
+    $('#Country').html(content);
 }
 
 //ARTIST GENRE AND STYLE
@@ -135,7 +135,7 @@ function renderArtistGenreAndStyle(data) {
 
     content += `<p><b>Genre:</b> ${data[0].genre} <br><b>Style:</b> ${data[0].style}</p>`;
 
-    $('#renderArtistGenreAndStyle').html(content);
+    $('#GenreAndStyle').html(content);
 }
 
 //----ALBUM----//
@@ -146,7 +146,7 @@ function renderAlbumName(data) {
 
     content += `<p>${data[0].albumName}</p>`;
 
-    $('#renderAlbumName').html(content);
+    $('#AlbumName').html(content);
 }
 
 
@@ -154,7 +154,7 @@ function renderAlbumName(data) {
 function renderAlbumYear(data) {
     let content = `<p><b>Album Year: </b>${data[0].releaseYear}</p>`;
 
-    $('#renderAlbumYear').html(content);
+    $('#AlbumYear').html(content);
 }        
 
 //ALBUM DESCRIPTION ENGLISH 
@@ -163,7 +163,7 @@ function renderDescriptionEnglish(data) {
 
     content += `<p>${data[0].descriptionEN}</p>`;
 
-    $('#renderAlbumDescriptionEN').html(content);
+    $('#AlbumDescriptionEnglish').html(content);
 }
 
 //ALBUM DESCRIPTION PORTUGUESE
@@ -172,5 +172,6 @@ function renderDescriptionPortuguese(data) {
 
     content += `<p>${data[0].descriptionPT}</p>`;
 
-    $('#renderAlbumDescriptionPT').html(content);
+    $('#DescriçãoDoAlbumEmPortuguês').html(content);
 }
+
