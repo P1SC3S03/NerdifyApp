@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    search = 'scorpions'.toLowerCase(); // CHANGE TO USER INPUT
+    $('#search-text').change((event) => {
+        let search = event.target.value.toLowerCase();
+        inputVerification(search);
 
     //API KEY = 523532
 
@@ -19,10 +21,21 @@ $(document).ready(function () {
         .catch(handleErrors);
 });
 
+//INPUT VERIFICATION/TREATMENT
+function inputVerification(search) {
+    if (!search) {
+        return;
+    }
+
+    search = search.replaceAll(" ", "_");
+
+    return search;
+}
+
 // PARSE JSON 
 function parseResponse(response) {
     if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
+        throw new Error(`HTTP error! status: ${response.status}`);
     }
     return response.json();
 }
@@ -45,7 +58,7 @@ function artistInfo(data) {
 
 //RENDER ARTIST HTML
 function renderArtistHTML(data) {
-    renderTitleAux(data);
+    renderTitle(data);
     renderArtistImage(data);
     renderArtistBioPT(data);
     renderArtistBioEN(data);
@@ -63,8 +76,6 @@ function renderAlbumHTML(data) {
 
 //FETCH ALBUMS BY ARTIST
 function fetchAlbunsByArtist(data) {
-    console.log(data);
-
     let info = data.album.map(album => {
         if (!album.strDescriptionEN) {
             album.strDescriptionEN = 'No data available';
@@ -78,7 +89,6 @@ function fetchAlbunsByArtist(data) {
             descriptionEN: album.strDescriptionEN, descriptionPT: album.strDescriptionPT
         }
     });
-    console.log(info);
     return info;
 }
 
@@ -92,7 +102,7 @@ function handleErrors(error) {
 //----ARTIST----//
 
 //RENDER TITLE
-function renderTitleAux(data) {
+function renderTitle(data) {
     let content = '<h3 id ="titleRender">'+data[0].name+'</h3>';
     $('#renderTitle').html(content);
 }
@@ -152,7 +162,9 @@ function renderAlbumName(data) {
 
 //ALBUM YEAR
 function renderAlbumYear(data) {
-    let content = `<p><b>Album Year: </b>${data[0].releaseYear}</p>`;
+    let content  = '<h3>Album Year</h3>';
+    
+    content += `<p>${data[0].releaseYear}</p>`;
 
     $('#AlbumYear').html(content);
 }        
@@ -174,4 +186,4 @@ function renderDescriptionPortuguese(data) {
 
     $('#DescriçãoDoAlbumEmPortuguês').html(content);
 }
-
+});
