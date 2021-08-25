@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nerdify Web API</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  
   <header>
     <section class="header">
       <div id="header-container" class="container">
@@ -18,12 +24,74 @@
         </div>
     </section>
   </header>   
+  
   <main>
     <div class="columns">
       <div class="col-1">
-        <p>
-          Amongst the hundreds of thousands of symbols which are in the unicode text specifications are certain characters which resemble, or are variations of the alphabet and other keyword symbols. For example, if we can take the phrase "thug life" and convert its characters into the fancy letters "𝖙𝖍𝖚𝖌 𝖑𝖎𝖋𝖊" which are a set of unicode symbols. These different sets of fancy text letters are scattered all throughout the unicode specification, and so to create a fancy text translator, it's just a matter of finding these sets of letters and symbols, and linking them to their normal alphabetical equivalents.
-        </p>
+        <div id="menuId">
+          <div id="renderTitle"></div>
+          <div id="renderImage"></div>
+          <div id="renderArtistCountry"></div>
+          <div id="renderArtistGenreAndStyle"></div>
+          <div id="renderArtistBioEN"></div>
+          <div id="renderArtistBioPT"></div>
+          <div id="renderAlbumName"></div>
+          <div id="renderAlbumYear"></div>
+          <div id="renderAlbumDescriptionEN"></div>
+          <div id="renderAlbumDescriptionPT"></div>
+            <button class="tablink" onclick="openPage('Country', this, 'red')">Country</button>
+            <button class="tablink" onclick="openPage('GenreAndStyle', this, 'green')" id="defaultOpen">Genre and Style</button>
+            <button class="tablink" onclick="openPage('BiographyInEnglish', this, 'blue')">Biography in English</button>
+            <button class="tablink" onclick="openPage('BiografiaEmPortuguês', this, 'orange')">Biografia em Português</button>
+            <button class="tablink" onclick="openPage('AlbumName', this, 'red')">Album Name</button>
+            <button class="tablink" onclick="openPage('AlbumYear', this, 'green')">Album Year</button>
+            <button class="tablink" onclick="openPage('AlbumDescriptionEnglish', this, 'blue')">Album Description
+              English</button>
+            <button class="tablink" onclick="openPage('DescriçãoDoAlbumEmPortuguês', this, 'orange')">Descrição do Album em
+              Português</button>
+            <div id="Country" class="tabcontent">
+              <h3>Country</h3>
+            </div>
+            <div id="GenreAndStyle" class="tabcontent">
+              <h3>Genre and Style</h3>
+            </div>
+            <div id="BiographyInEnglish" class="tabcontent">
+              <h3>Biography in English</h3>
+            </div>
+            <div id="BiografiaEmPortuguês" class="tabcontent">
+              <h3>Biografia em Português</h3>
+            </div>
+            <div id="AlbumName" class="tabcontent">
+              <h3>Album Name</h3>
+            </div>
+            <div id="AlbumYear" class="tabcontent">
+              <h3>Album Year</h3>
+            </div>
+            <div id="AlbumDescriptionEnglish" class="tabcontent">
+              <h3>Album Description English</h3>
+            </div>
+            <div id="DescriçãoDoAlbumEmPortuguês" class="tabcontent">
+              <h3>Descrição do Album em Português</h3>
+            </div>
+            
+            <script>
+              function openPage(pageName, elmnt, color) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].style.backgroundColor = "";
+                }
+                document.getElementById(pageName).style.display = "block";
+                elmnt.style.backgroundColor = color;
+              }
+              // Get the element with id="defaultOpen" and click on it
+              document.getElementById("defaultOpen").click();
+            </script>
+          </div>
       </div>
       <div class="col-2">
         <div id="search-bar">
@@ -46,6 +114,9 @@
       </div>
     </div>
   </main>
+  
+  
+  
   <footer id="footer" class="center" >
     <div class="footer-div">
         <p id="p-footer"class="center"><strong>Nerdify</strong> is made with &#10084 using two APIs to retrieve the best information of your favorite artists!</p>
@@ -54,8 +125,25 @@
         </form>
         <p id="feedback" class="center">Send Us Feedback!</p>
   </footer>
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/search_info/search.js" charset="utf-8"></script>
+  
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/search_info/search.js" charset="utf-8"></script>
+    <script src="/audiodb/audiodb.js"></script>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
