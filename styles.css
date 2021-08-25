@@ -1,9 +1,10 @@
     .header {
-    background-image: url("img/speaker-music-blue2.jpg");
+    background-image: url("img/LoginImage.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    position: relative;
     }
     
     .header-body {
@@ -12,23 +13,29 @@
     }
     
     #header-image {
-        height: 70px;
-        width: 60px;
+        height: 75px;
+        width: 75px;
         margin-bottom: 5px;
-        border-radius: 1rem;
+        margin-top: 5px;
+        border-radius: 8px; 
     }
     
-    #header-title,
+    #header-title {
+        color: white;
+        opacity: 0.8;
+        height: 70px;
+        text-align: center;
+        font-family: 'Nothing You Could Do', cursive;
+        margin-bottom: 30px;
+        font-size: 50px;
+    }
+
     #header-subtitle-1,
     #header-subtitle-2 {
         color: rgb(255, 255, 255);
     }
     
-    #header-title {
-        margin-bottom: 30px;
-        font-size: 50px;
-    }
-
+/*
 #saudation{
     text-align: center;
     color: #CCC;
@@ -73,6 +80,8 @@
     font-family: 'Kaisei Opti', serif;
     color:white;
     text-align: center;
+}*/
+
 }
 
 
@@ -86,7 +95,8 @@
 }
 
 #search-bar{
-    text-align: center;
+    text-align: right;
+    margin-right: 30px;
 }
 
 .button{
@@ -111,6 +121,14 @@
     margin-right: -50px;
     text-align: center;
     font-family: 'Kaisei Opti', serif;
+}
+
+#search-text {
+    border-radius: 5px;
+}
+
+#search_button{
+    border-radius: 5px;
 }
 
 /*
@@ -149,7 +167,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;            /* Footer height */
+    height: 2.5rem;           
 }
 #p-footer{
     text-align: center;
