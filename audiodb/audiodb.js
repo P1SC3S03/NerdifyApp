@@ -58,7 +58,7 @@ function artistInfo(data) {
 
 //RENDER ARTIST HTML
 function renderArtistHTML(data) {
-    renderTitleAux(data);
+    renderTitle(data);
     renderArtistImage(data);
     renderArtistBioPT(data);
     renderArtistBioEN(data);
@@ -102,7 +102,7 @@ function handleErrors(error) {
 //----ARTIST----//
 
 //RENDER TITLE
-function renderTitleAux(data) {
+function renderTitle(data) {
     let content = '<h3 id ="titleRender">'+data[0].name+'</h3>';
     $('#renderTitle').html(content);
 }
