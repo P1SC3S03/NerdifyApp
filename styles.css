@@ -27,7 +27,7 @@
         height: 70px;
         text-align: center;
         font-family: 'Nothing You Could Do', cursive;
-        margin-bottom: 30px;
+        margin-bottom: 0px;
         font-size: 50px;
 }
 
@@ -81,15 +81,13 @@
 
 .col-1{
     width:84%;
-    border: 1px solid;
+    /* border: 1px solid; */
     height: 100%;
-    min-height: 900px;
-
 }
 
 .col-2{
     width:16%;
-    border: 1px solid;
+    /* border: 1px solid; */
     height: 100%;
     min-height: 900px;
     
@@ -193,10 +191,12 @@
     
     bottom: 0;
     width: 100%;
-    height: 2.5rem;           
+    height: 2.5rem;
+             
 }
 #p-footer{
     text-align: center;
+    
 }
 
 .tablink {
@@ -209,16 +209,19 @@
     padding: 14px 16px;
     font-size: 17px;
     width: 25%;
+   
   }
   .tablink:hover {
     background-color: #777;
+  
   }
   /* Style the tab content (and add height:100% for full page content) */
   .tabcontent {
-    color: white;
+    color: black;
     display: none;
     padding: 100px 20px;
     height: 50%;
+    
   }
   #menuId{
    position: relative;
@@ -227,7 +230,7 @@
 #titleRender{
     position: absolute;
     text-align:center;
-    top:430px;
+    top:730px;
     left: 610px;
     font-size:80px;
     color:white; 
@@ -236,15 +239,12 @@
     font-weight: bold; 
     font-family: 'Nanum Myeongjo', serif;
 }
+
 #image{
     position: relative;
     width: 100%;
     height: auto;
-    border-radius: 8px;
     left:-1px;
     opacity: 0.8;
 }
 
-/*body{
-    background-color:gray;
-}*/
