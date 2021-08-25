@@ -29,15 +29,10 @@
         font-size: 50px;
     }
 
-.login{
-    background-image: url("https://cdn.pixabay.com/photo/2016/11/23/00/23/hands-1851426_960_720.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 #saudation{
     text-align: center;
     color: #CCC;
+    margin-right: -40px;
 }
 
 .emoji {
@@ -82,7 +77,7 @@
 
 
 #image-nerd{
-    width: 200px;
+    width: 12%;
     height: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -98,6 +93,7 @@
     font-size: 20px;
     position: relative;
     top: 25px;
+    right: -17px;
     padding: 15px 25px;
     text-align: center;
     background-color: #04AA6D;
@@ -112,6 +108,7 @@
 
 .title{
     color:rgb(195, 195, 195);
+    margin-right: -50px;
     text-align: center;
     font-family: 'Kaisei Opti', serif;
 }
