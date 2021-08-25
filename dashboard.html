@@ -13,12 +13,10 @@
 
   <header>
     <section class="header">
-        <div id="header-container" class="container">
-            <div class="header-body">
-                <img id="header-image" src="img/Nerdify.png" width="60" height="20">
-                <h1 id="header-title" class="title">Mindswap-Music</h1>
-                <h2 id="header-subtitle-1" class="subtitle">TEXTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</h2>
-                <h2 id="header-subtitle-2" class="subtitle">TEXTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</h2>
+      <div id="header-container" class="container">
+        <div class="header-body">
+                <img id="header-image" src="img/Nerdify.png">
+                <h1 id="header-title" class="title">Nerdify</h1>
             </div>    
         </div>
     </section>
@@ -30,6 +28,13 @@
         <p>
           Amongst the hundreds of thousands of symbols which are in the unicode text specifications are certain characters which resemble, or are variations of the alphabet and other keyword symbols. For example, if we can take the phrase "thug life" and convert its characters into the fancy letters "𝖙𝖍𝖚𝖌 𝖑𝖎𝖋𝖊" which are a set of unicode symbols. These different sets of fancy text letters are scattered all throughout the unicode specification, and so to create a fancy text translator, it's just a matter of finding these sets of letters and symbols, and linking them to their normal alphabetical equivalents.
         </p>
+    <div>
+      <div id="search-bar">
+        <div>
+          <img id="microphone-image" class="is-right" onclick="startDictation()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/256px-Google_mic.svg.png"> 
+          <input type="text" id="search-text" placeholder="Search..."/>
+          <button id="search_button" type="button">&#129488</button>
+
       </div>
       <div class="col-2">
         <div id="search-bar">
@@ -62,6 +67,24 @@
         </FORM>
         <p id="feedback" class="center">Send Us Feedback!</p>
   </footer>
+
+
+    <div>
+
+    </div>
+    
+    
+    
+  </main>
+    
+    <footer id="footer" class="center" >
+      <div class="footer-div">
+          <p id="p-footer"class="center"><strong>Nerdify</strong> is made with &#10084 using two APIs to retrieve the best information of your favorite artists!</p>
+          <form action="mailto:pedrobboard@hotmail.com?subject=Feedback&#10084" method="POST">
+            <input id='pedro' class="center" type="image" src="img/pedro.jpg"/>
+          </form>
+          <p id="feedback" class="center">Send Us Feedback!</p>
+    </footer>
 
   
   <script src="https://apis.google.com/js/platform.js"></script>

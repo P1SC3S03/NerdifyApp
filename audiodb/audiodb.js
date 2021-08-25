@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    search = 'abba'.toLowerCase(); // CHANGE TO USER INPUT
+    search = 'scorpions'.toLowerCase(); // CHANGE TO USER INPUT
 
     //API KEY = 523532
 
@@ -106,7 +106,7 @@ function renderArtistImage(data) {
 function renderArtistBioPT(data) {
     let content = '<h3>Biografia em Português</h3>';
 
-    content += `<p>${data[0].bioPT}</p>`;
+    content += `<p id="BioInPortuguese">${data[0].bioPT}</p>`;
 
     $('#BiografiaEmPortuguês').html(content);
 }
