@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    search = 'scorpions'.toLowerCase(); // CHANGE TO USER INPUT
+    $('#search-text').change((event) => {
+        let search = event.target.value.toLowerCase();
+        inputVerification(search);
 
     //API KEY = 523532
 
@@ -19,10 +21,21 @@ $(document).ready(function () {
         .catch(handleErrors);
 });
 
+//INPUT VERIFICATION/TREATMENT
+function inputVerification(search) {
+    if (!search) {
+        return;
+    }
+
+    search = search.replaceAll(" ", "_");
+
+    return search;
+}
+
 // PARSE JSON 
 function parseResponse(response) {
     if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
+        throw new Error(`HTTP error! status: ${response.status}`);
     }
     return response.json();
 }
@@ -63,8 +76,6 @@ function renderAlbumHTML(data) {
 
 //FETCH ALBUMS BY ARTIST
 function fetchAlbunsByArtist(data) {
-    console.log(data);
-
     let info = data.album.map(album => {
         if (!album.strDescriptionEN) {
             album.strDescriptionEN = 'No data available';
@@ -78,7 +89,6 @@ function fetchAlbunsByArtist(data) {
             descriptionEN: album.strDescriptionEN, descriptionPT: album.strDescriptionPT
         }
     });
-    console.log(info);
     return info;
 }
 
@@ -174,4 +184,4 @@ function renderDescriptionPortuguese(data) {
 
     $('#DescriçãoDoAlbumEmPortuguês').html(content);
 }
-
+});
