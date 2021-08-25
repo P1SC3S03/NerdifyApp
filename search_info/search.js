@@ -46,11 +46,11 @@ $(document).ready(function () {
             recognition.lang = "en-US";
             recognition.start();
             recognition.onresult = function (e) {
-                document.getElementById(`transcript`).value
+                document.getElementById(`search-text`).value
                     = e.results[0][0].transcript;
                 recognition.stop();
                 // VARIAVEL COM O SEARCH-SPEECH AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-                let search = document.getElementById(`transcript`).value;
+                let search = document.getElementById(`search-text`).value;
                 let searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s='+ search;
                 console.log(searchEndPoint)
                
@@ -70,7 +70,7 @@ $(document).ready(function () {
       let search_query = encodeURI(raw_search_query);
   
       $.ajax({
-        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=3`,
+        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=6`,
         type: 'GET',
         headers: {
           'Authorization': 'Bearer ' + accessToken
