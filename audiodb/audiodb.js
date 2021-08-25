@@ -162,7 +162,9 @@ function renderAlbumName(data) {
 
 //ALBUM YEAR
 function renderAlbumYear(data) {
-    let content = `<p><b>Album Year: </b>${data[0].releaseYear}</p>`;
+    let content  = '<h3>Album Year</h3>';
+    
+    content += `<p>${data[0].releaseYear}</p>`;
 
     $('#AlbumYear').html(content);
 }        
