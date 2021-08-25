@@ -18,6 +18,7 @@
         margin-bottom: 5px;
         margin-top: 5px;
         border-radius: 8px; 
+        margin-left: 65px;
     }
     
     #header-title {
@@ -112,6 +113,9 @@
 
 .index{
     background-image: linear-gradient(to right, black , rgb(105, 125, 115));
+    text-align: center;
+    position: relative;
+    top: 150px;
 }
 
 .title{
