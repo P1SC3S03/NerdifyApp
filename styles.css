@@ -76,7 +76,6 @@
     }
 }
 
-
 .columns {
     display: flex;
 }
@@ -97,14 +96,12 @@
     
 }
 
-
-/*.searchText{
+.searchText{
     position: relative;
     font-family: 'Kaisei Opti', serif;
     color:white;
     text-align: center;
 }*/
-
 
 
 #image-nerd{
@@ -117,14 +114,8 @@
 }
 
 #search-bar{
-
-    margin: 3px;
-    width:100%;
-    text-align: center;
-
     text-align: right;
     margin-right: 30px;
-
 }
 
 .button{
@@ -154,8 +145,6 @@
     font-family: 'Kaisei Opti', serif;
 }
 
-
-
 #search-text {
     border-radius: 5px;
 }
@@ -176,7 +165,6 @@
     width: 50%;
 }
 */
-
 
 #pedro {
   border: 1px solid #ddd;
@@ -203,13 +191,10 @@
 }
 
 #footer {
+    position: absolute;
     bottom: 0;
     width: 100%;
-
-    height: 2.5rem;
-
     height: 2.5rem;           
-
 }
 #p-footer{
     text-align: center;

@@ -70,7 +70,7 @@ $(document).ready(function () {
       let search_query = encodeURI(raw_search_query);
   
       $.ajax({
-        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=6`,
+        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=3`,
         type: 'GET',
         headers: {
           'Authorization': 'Bearer ' + accessToken
@@ -81,7 +81,7 @@ $(document).ready(function () {
           let num_of_tracks = data.tracks.items.length;
           let count = 0;
   
-          const max_songs = 9;
+          const max_songs = 12;
           while (count < max_songs && count < num_of_tracks) {
   
             let id = data.tracks.items[count].id;
