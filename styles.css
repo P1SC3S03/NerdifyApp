@@ -1,10 +1,10 @@
     .header {
-    /* background-image: url("img/LoginImage.jpg"); */
-    background-color: gray; 
+    background-image: url("img/LoginImage.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    position: relative;
     }
     
     .header-body {
