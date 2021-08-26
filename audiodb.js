@@ -72,7 +72,7 @@ function fetchAlbunsByArtist(data) {
             album.strDescriptionEN = 'No data available';
         }
         if (!album.strDescriptionPT) {
-            album.strDescriptionPT = 'No data available';
+            album.strDescriptionPT = 'Sem informação disponível';
         }
         return {
             idAlbum: album.idAlbum, idArtist: album.idArtist,
@@ -100,7 +100,8 @@ function renderTitle(data) {
 
 //RENDER ARTIST IMAGE
 function renderArtistImage(data) {
-    $('#renderImage').html(`<div id="home-image"><img id="image" src="${data[0].fanart}"></div>`);
+    let content = `<div id="home-image"><img id="image" src="${data[0].fanart}"></div>`;
+    $('#renderImage').html(content);
 }
 
 //ARTIST BIO IN PORTUGUESE

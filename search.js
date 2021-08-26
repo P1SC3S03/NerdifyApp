@@ -36,6 +36,7 @@ $(document).ready(function () {
   }); 
 
 
+
   $("#microphone-image").on("click", function() {
     function startDictation() {
       if (window.hasOwnProperty("webkitSpeechRecognition")) {
@@ -59,12 +60,39 @@ $(document).ready(function () {
     startDictation();
 }); 
   
+
+    $("#search_button").on("click", function () {
+      $("#menuId").empty();
+      const openHeaders = $(`<button class="tablink" onclick="openPage('Country', this, 'red')">Country</button>
+      <button class="tablink" onclick="openPage('GenreAndStyle', this, 'green')" id="defaultOpen">Genre and Style</button>
+      <button class="tablink" onclick="openPage('BiographyInEnglish', this, 'blue')">Biography in English</button>
+      <button class="tablink" onclick="openPage('BiografiaEmPortuguês', this, 'orange')">Biografia em Português</button>
+      <button class="tablink" onclick="openPage('Albums', this, 'red')">Albums</button>
+      <div id="Country" class="tabcontent">
+        <h3>Country</h3>
+      </div>
+      
+      <div id="GenreAndStyle" class="tabcontent">
+        <h3>Genre and Style</h3>
+      </div>
+  
+      <div id="BiographyInEnglish" class="tabcontent">
+        <h3>Biography in English</h3>
+      </div>
+  
+      <div id="BiografiaEmPortuguês" class="tabcontent">
+        <h3>Biografia em Português</h3>
+      </div>
+      <div id="Albums" class="tabcontent">
+        <h3>Albums</h3>
+      </div>`);
+      $("#menuId").append(openHeaders);
+    });
   
     $("#search_button").click(function () {
-  
       let raw_search_query = $('#search-text').val();
       let search_query = encodeURI(raw_search_query);
-  
+      
       $.ajax({
         url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=10`,
         type: 'GET',
@@ -74,10 +102,10 @@ $(document).ready(function () {
         success: function (data) {  
           let num_of_tracks = data.tracks.items.length;
           let count = 0;
-  
+          
           const max_songs = 10;
           while (count < max_songs && count < num_of_tracks) {
-  
+            
             let id = data.tracks.items[count].id;
   
             let src_str = `https://open.spotify.com/embed/track/${id}`;
@@ -90,41 +118,3 @@ $(document).ready(function () {
       });
     });
   });
-
-
-/*  function searchArtist() {
-    const input = document.getElementById('search').value;
-
-    $.ajax({
-        url: `https://api.spotify.com/v1/search?q=${input}&type=artist`,
-        type: 'GET',
-        headers: {
-            'Authorization': 'Bearer ' + accessToken
-        },
-        success: function (data) {
-            document.body.append();
-
-            console.log(data);
-
-            const ul = document.createElement('ul');
-            document.body.appendChild(ul);
-
-            data.artists.items.forEach(element => {
-                if(element.images.length > 0) {
-                    const li = document.createElement('li');
-                    const img = document.createElement('img');
-                    let id = element.id;
-                    img.src = element.images[0].url;
-                    img.onclick = function () {
-                        window.location.href = 'https://open.spotify.com/artist/' + id;
-                    }
-                    li.appendChild(img);
-
-                    ul.appendChild(li);
-                }
-            });
-        }
-    })
-    .catch(error => console.error(error))
-} 
- */
