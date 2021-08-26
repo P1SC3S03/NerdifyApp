@@ -87,7 +87,7 @@ $(document).ready(function () {
             let id = data.tracks.items[count].id;
   
             let src_str = `https://open.spotify.com/embed/track/${id}`;
-            let iframe = `<div class='song'><iframe src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`;
+            let iframe = `<div class='song'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`;
             let parent_div = $('#song_' + count);
             parent_div.html(iframe);
             count++;
