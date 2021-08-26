@@ -23,7 +23,6 @@ $(document).ready(function () {
 //INPUT VERIFICATION/TREATMENT
 function inputVerification(search) {
     if (!search) {
-        alert('Invalid search! ⛔');
         return;
     }
 
@@ -42,10 +41,6 @@ function parseResponse(response) {
 
 //EXTRACT IMPORTANT ARTIST INFO
 function artistInfo(data) {
-    if(!data.strArtist) {
-        alert('The artist name you provided did not match any artist in our database. We are sorry... 😔');
-        return;
-    }
     const artist = data.artists.map(artist => {
         if (JSON.stringify(artist.strArtist).toLowerCase().includes(JSON.stringify(search))) {
             if(!artist.strArtistFanart){
@@ -93,7 +88,6 @@ function renderArtistHTML(data) {
 
 //FETCH ALBUMS BY ARTIST
 function fetchAlbunsByArtist(data) {
-
         let info = data.album.map(album => {
         if(!album.strAlbumThumb) {
             album.strAlbumThumb = ''; 

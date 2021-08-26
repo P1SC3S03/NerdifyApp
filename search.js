@@ -62,11 +62,6 @@ $(document).ready(function () {
   
   $("#search_button").click(function () {
     let raw_search_query = $('#search-text').val();
-    
-    if(!raw_search_query) {
-      alert("Invalid search!");
-      return;
-    }
     let search_query = encodeURI(raw_search_query);
     
     $.ajax({
@@ -92,33 +87,32 @@ $(document).ready(function () {
         }
       }
     });
-
-    $("#search_button").on("click", function () {
-      $("#menuId").empty();
-      const openHeaders = $(`<button class="tablink" onclick="openPage('Country', this, 'red')">Country</button>
-      <button class="tablink" onclick="openPage('GenreAndStyle', this, 'green')" id="defaultOpen">Genre and Style</button>
-      <button class="tablink" onclick="openPage('BiographyInEnglish', this, 'blue')">Biography in English</button>
-      <button class="tablink" onclick="openPage('BiografiaEmPortuguês', this, 'orange')">Biografia em Português</button>
-      <button class="tablink" onclick="openPage('Albums', this, 'red')">Albums</button>
-      <div id="Country" class="tabcontent">
-        <h3>Country</h3>
-      </div>
-      
-      <div id="GenreAndStyle" class="tabcontent">
-        <h3>Genre and Style</h3>
-      </div>
-  
-      <div id="BiographyInEnglish" class="tabcontent">
-      <h3>Biography in English</h3>
-      </div>
-      
-      <div id="BiografiaEmPortuguês" class="tabcontent">
-        <h3>Biografia em Português</h3>
-      </div>
-      <div id="Albums" class="tabcontent">
-        <h3>Albums</h3>
-      </div>`);
-      $("#menuId").append(openHeaders);
-    });
-    });
   });
+  $("#search_button").on("click", function () {
+    $("#menuId").empty();
+    const openHeaders = $(`<button class="tablink" onclick="openPage('Country', this, 'red')">Country</button>
+    <button class="tablink" onclick="openPage('GenreAndStyle', this, 'green')" id="defaultOpen">Genre and Style</button>
+    <button class="tablink" onclick="openPage('BiographyInEnglish', this, 'blue')">Biography in English</button>
+    <button class="tablink" onclick="openPage('BiografiaEmPortuguês', this, 'orange')">Biografia em Português</button>
+    <button class="tablink" onclick="openPage('Albums', this, 'red')">Albums</button>
+    <div id="Country" class="tabcontent">
+      <h3>Country</h3>
+    </div>
+    
+    <div id="GenreAndStyle" class="tabcontent">
+      <h3>Genre and Style</h3>
+    </div>
+  
+    <div id="BiographyInEnglish" class="tabcontent">
+    <h3>Biography in English</h3>
+    </div>
+    
+    <div id="BiografiaEmPortuguês" class="tabcontent">
+      <h3>Biografia em Português</h3>
+    </div>
+    <div id="Albums" class="tabcontent">
+      <h3>Albums</h3>
+    </div>`);
+    $("#menuId").append(openHeaders);
+  });
+});
