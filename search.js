@@ -66,7 +66,7 @@ $(document).ready(function () {
       let search_query = encodeURI(raw_search_query);
   
       $.ajax({
-        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=6`,
+        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=10`,
         type: 'GET',
         headers: {
           'Authorization': 'Bearer ' + accessToken
@@ -75,13 +75,13 @@ $(document).ready(function () {
           let num_of_tracks = data.tracks.items.length;
           let count = 0;
   
-          const max_songs = 12;
+          const max_songs = 10;
           while (count < max_songs && count < num_of_tracks) {
   
             let id = data.tracks.items[count].id;
   
             let src_str = `https://open.spotify.com/embed/track/${id}`;
-            let iframe = `<div class='song'><iframe src=${src_str} frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>`;
+            let iframe = `<div class='song'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`;
             let parent_div = $('#song_' + count);
             parent_div.html(iframe);
             count++;

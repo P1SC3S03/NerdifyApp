@@ -97,6 +97,13 @@ CSS HEADER
     /* border: 1px solid; */
     height: 100%;
     min-height: 900px;
+  
+    
+}
+
+.iframe{
+    width: 100%;
+    margin-top: -5px;
     
 }
 
