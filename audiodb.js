@@ -17,7 +17,7 @@ $(document).ready(function () {
     fetch(searchAlbumsByArtistURL + search)
         .then(parseResponse)
         .then(fetchAlbunsByArtist)
-        .then(renderAlbumHTML)
+        .then(renderAlbums)
         .catch(handleErrors);
 
 //INPUT VERIFICATION/TREATMENT
@@ -65,17 +65,9 @@ function renderArtistHTML(data) {
     renderArtistGenreAndStyle(data);
 }
 
-//RENDER ALBUMS HTML
-function renderAlbumHTML(data) {
-    renderAlbumName(data);
-    renderAlbumYear(data);
-    renderDescriptionEnglish(data);
-    renderDescriptionPortuguese(data);
-}
-
 //FETCH ALBUMS BY ARTIST
 function fetchAlbunsByArtist(data) {
-    let info = data.album.map(album => {
+        let info = data.album.map(album => {
         if (!album.strDescriptionEN) {
             album.strDescriptionEN = 'No data available';
         }
@@ -84,7 +76,7 @@ function fetchAlbunsByArtist(data) {
         }
         return {
             idAlbum: album.idAlbum, idArtist: album.idArtist,
-            albumName: album.strAlbum, releaseYear: album.intYearReleased,
+            albumName: album.strAlbum, albumImage: album.strAlbumThumb, releaseYear: album.intYearReleased,
             descriptionEN: album.strDescriptionEN, descriptionPT: album.strDescriptionPT
         }
     });
@@ -147,43 +139,23 @@ function renderArtistGenreAndStyle(data) {
     $('#GenreAndStyle').html(content);
 }
 
-//----ALBUM----//
+//----ALBUMS----//
 
-//ALBUM NAME
-function renderAlbumName(data) {
-    let content = '<h3>Album Name</h3>';
+//ALBUM INFORMATION (NAME, YEAR, IMAGE, DESCRIPTION_EN, DESCRIPTION_PT)
+function renderAlbums(data) {
+    //Name, Year, Image, Description x2 
+    let content = '<h3 id="album-title"><b>Albums</b></h3>';    //RETIRAR TODAS ESTAS DIV ALBUM CENAS
 
-    content += `<p>${data[0].albumName}</p>`;
+    for (let i=0; i < data.length; i++){
+    content += `<p>
+    <img id="album-images" src="${data[i].albumImage}" alt="${data[i].albumName}"> <br>
+    <b>Album Name:</b> ${data[i].albumName} <br>
+    <b>Year:</b> ${data[i].releaseYear} <br>
+    <b>Album Description in English:</b> ${data[i].descriptionEN}<br>
+    <b>Descrição do Album em Português:</b> ${data[i].descriptionPT}</p>`;
+    }
 
-    $('#AlbumName').html(content);
-}
-
-
-//ALBUM YEAR
-function renderAlbumYear(data) {
-    let content  = '<h3>Album Year</h3>';
-    
-    content += `<p>${data[0].releaseYear}</p>`;
-
-    $('#AlbumYear').html(content);
-}        
-
-//ALBUM DESCRIPTION ENGLISH 
-function renderDescriptionEnglish(data) {
-    let content = '<h3>Album Description English</h3>';
-
-    content += `<p>${data[0].descriptionEN}</p>`;
-
-    $('#AlbumDescriptionEnglish').html(content);
-}
-
-//ALBUM DESCRIPTION PORTUGUESE
-function renderDescriptionPortuguese(data) {
-    let content = '<h3>Descrição do Album em Português</h3>';
-
-    content += `<p>${data[0].descriptionPT}</p>`;
-
-    $('#DescriçãoDoAlbumEmPortuguês').html(content);
+    $('#Albums').html(content);
 }
 });
 });
