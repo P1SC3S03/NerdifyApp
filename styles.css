@@ -94,7 +94,9 @@
     /* border: 1px solid; */
     height: 100%;
     min-height: 900px;
-  
+    position: fixed;
+    right: 0;
+    top: 16%;
     
 }
 
@@ -129,6 +131,7 @@
 #search-bar{
     margin-top: 15px;
     margin-left: 20px;
+    text-align: center;
 }
 
 .button{
