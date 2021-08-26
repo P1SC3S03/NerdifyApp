@@ -143,13 +143,12 @@ function renderArtistGenreAndStyle(data) {
 
 //ALBUM INFORMATION (NAME, YEAR, IMAGE, DESCRIPTION_EN, DESCRIPTION_PT)
 function renderAlbums(data) {
-    //Name, Year, Image, Description x2 
-    let content = '<h3 id="album-title"><b>Albums</b></h3>';    //RETIRAR TODAS ESTAS DIV ALBUM CENAS
+    let content = '<h3 id="album-title"><b>Albums</b></h3>';
 
     for (let i=0; i < data.length; i++){
     content += `<p>
-    <img id="album-images" src="${data[i].albumImage}" alt="${data[i].albumName}"> <br>
-    <b>Album Name:</b> ${data[i].albumName} <br>
+    <img id="album-images" src="${data[i].albumImage}" alt="${data[i].albumName}"> <br></p>
+    <p id="album-text"><b>Album Name:</b> ${data[i].albumName} <br>
     <b>Year:</b> ${data[i].releaseYear} <br>
     <b>Album Description in English:</b> ${data[i].descriptionEN}<br>
     <b>Descrição do Album em Português:</b> ${data[i].descriptionPT}</p>`;
