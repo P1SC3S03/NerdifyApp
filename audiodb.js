@@ -19,7 +19,6 @@ $(document).ready(function () {
         .then(fetchAlbunsByArtist)
         .then(renderAlbumHTML)
         .catch(handleErrors);
-});
 
 //INPUT VERIFICATION/TREATMENT
 function inputVerification(search) {
@@ -186,4 +185,5 @@ function renderDescriptionPortuguese(data) {
 
     $('#DescriçãoDoAlbumEmPortuguês').html(content);
 }
+});
 });
