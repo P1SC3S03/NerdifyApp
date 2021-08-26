@@ -66,7 +66,7 @@ $(document).ready(function () {
       let search_query = encodeURI(raw_search_query);
   
       $.ajax({
-        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=3`,
+        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=6`,
         type: 'GET',
         headers: {
           'Authorization': 'Bearer ' + accessToken
