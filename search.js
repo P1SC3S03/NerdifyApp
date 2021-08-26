@@ -58,8 +58,40 @@ $(document).ready(function () {
         }
     }
     startDictation();
-}); 
+  }); 
   
+  $("#search_button").click(function () {
+    let raw_search_query = $('#search-text').val();
+    
+    if(!raw_search_query) {
+      alert("Invalid search!");
+      return;
+    }
+    let search_query = encodeURI(raw_search_query);
+    
+    $.ajax({
+      url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=10`,
+      type: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + accessToken
+      },
+      success: function (data) {  
+        let num_of_tracks = data.tracks.items.length;
+        let count = 0;
+        
+        const max_songs = 10;
+        while (count < max_songs && count < num_of_tracks) {
+          
+          let id = data.tracks.items[count].id;
+  
+          let src_str = `https://open.spotify.com/embed/track/${id}`;
+          let iframe = `<div class='song'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`;
+          let parent_div = $('#song_' + count);
+          parent_div.html(iframe);
+          count++;
+        }
+      }
+    });
 
     $("#search_button").on("click", function () {
       $("#menuId").empty();
@@ -77,9 +109,9 @@ $(document).ready(function () {
       </div>
   
       <div id="BiographyInEnglish" class="tabcontent">
-        <h3>Biography in English</h3>
+      <h3>Biography in English</h3>
       </div>
-  
+      
       <div id="BiografiaEmPortuguês" class="tabcontent">
         <h3>Biografia em Português</h3>
       </div>
@@ -88,33 +120,5 @@ $(document).ready(function () {
       </div>`);
       $("#menuId").append(openHeaders);
     });
-  
-    $("#search_button").click(function () {
-      let raw_search_query = $('#search-text').val();
-      let search_query = encodeURI(raw_search_query);
-      
-      $.ajax({
-        url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=10`,
-        type: 'GET',
-        headers: {
-          'Authorization': 'Bearer ' + accessToken
-        },
-        success: function (data) {  
-          let num_of_tracks = data.tracks.items.length;
-          let count = 0;
-          
-          const max_songs = 10;
-          while (count < max_songs && count < num_of_tracks) {
-            
-            let id = data.tracks.items[count].id;
-  
-            let src_str = `https://open.spotify.com/embed/track/${id}`;
-            let iframe = `<div class='song'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`;
-            let parent_div = $('#song_' + count);
-            parent_div.html(iframe);
-            count++;
-          }
-        }
-      });
     });
   });

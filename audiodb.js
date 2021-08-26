@@ -23,6 +23,7 @@ $(document).ready(function () {
 //INPUT VERIFICATION/TREATMENT
 function inputVerification(search) {
     if (!search) {
+        alert('Invalid search! ⛔');
         return;
     }
 
@@ -41,8 +42,33 @@ function parseResponse(response) {
 
 //EXTRACT IMPORTANT ARTIST INFO
 function artistInfo(data) {
+    if(!data.strArtist) {
+        alert('The artist name you provided did not match any artist in our database. We are sorry... 😔');
+        return;
+    }
     const artist = data.artists.map(artist => {
         if (JSON.stringify(artist.strArtist).toLowerCase().includes(JSON.stringify(search))) {
+            if(!artist.strArtistFanart){
+                artist.strArtistFanart = 'No image available';
+            }
+            if(!artist.strBiographyPT){
+                artist.strBiographyPT = 'Sem informação disponível';
+            }
+            if(!artist.strBiographyEN){
+                artist.strBiographyEN = 'No data available';
+            }
+            if(!artist.strCountry) {
+                artist.strCountry = 'Unknown Country';
+            }
+            if(!artist.strCountryCode) { 
+                artist.strCountryCode = 'Unknown Country Code';
+            } 
+            if(!artist.strGenre){
+                artist.strGenre = 'Unkown Genre';
+            }
+            if(!artist.strStyle) {
+                artist.strStyle = 'Unkown Style';
+            }
             return {
                 id: artist.idArtist, name: artist.strArtist, fanart: artist.strArtistFanart,
                 bioPT: artist.strBiographyPT, bioEN: artist.strBiographyEN,
@@ -67,7 +93,11 @@ function renderArtistHTML(data) {
 
 //FETCH ALBUMS BY ARTIST
 function fetchAlbunsByArtist(data) {
+
         let info = data.album.map(album => {
+        if(!album.strAlbumThumb) {
+            album.strAlbumThumb = ''; 
+        }
         if (!album.strDescriptionEN) {
             album.strDescriptionEN = 'No data available';
         }
