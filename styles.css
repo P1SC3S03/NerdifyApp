@@ -200,15 +200,17 @@
 }
 
 .tablink {
-    background-color: #555;
-    color: white;
-    float: left;
+    background-color: white;
+    color: black;
     border: none;
-    outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 25%;
+    font-size: 15px;
+    width: 620px;
+    height:40px;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    top:70px;
+    left:220px;
    
   }
   .tablink:hover {
@@ -218,21 +220,22 @@
   /* Style the tab content (and add height:100% for full page content) */
   .tabcontent {
     color: black;
-    display: none;
     padding: 100px 20px;
-    height: 50%;
+    text-align: justify;
+    font-size:15px;
     
   }
   #menuId{
    position: relative;
     width: 100%;
   }
+
 #titleRender{
     position: absolute;
     text-align:center;
-    top:730px;
-    left: 610px;
-    font-size:80px;
+    top:230px;
+    left: 790px;
+    font-size:50px;
     color:white; 
     opacity: 0.9;
     z-index: 1;
@@ -242,9 +245,14 @@
 
 #image{
     position: relative;
-    width: 100%;
+    width: 30%;
     height: auto;
     left:-1px;
     opacity: 0.8;
+    top:50px;
+    left: 650px;
+}
+h3{
+    text-align: center;
 }
 
