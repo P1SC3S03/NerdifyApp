@@ -176,12 +176,13 @@ CSS HEADER
     border: none;
     cursor: pointer;
     font-size: 15px;
-    width: 620px;
-    height:40px;
+    width: 50%;
+    height:100%;
     font-family: 'Raleway', sans-serif;
     position: relative;
-    top:70px;
-    left:220px;
+    text-align: center;
+    top: -10px;
+    left: 380px;
    
   }
   .tablink:hover {
@@ -193,8 +194,12 @@ CSS HEADER
     color: black;
     display: none;
     padding: 100px 20px;
+    /* text-align: justify; */
     text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
     font-size:15px;
+    
     
   }
   #menuId{
@@ -203,10 +208,10 @@ CSS HEADER
   }
 
 #titleRender{
-    position: absolute;
+    position: relative;
     text-align:center;
-    top:230px;
-    left: 790px;
+    top:300px;
+    left:-9px;
     font-size:50px;
     color:white; 
     opacity: 0.9;
@@ -217,12 +222,12 @@ CSS HEADER
 
 #image{
     position: relative;
-    width: 30%;
+    width: 40%;
     height: auto;
-    left:-1px;
     opacity: 0.8;
-    top:50px;
-    left: 650px;
+    /* top:50px; */
+    left: 470px;
+    
 }
 h3{
     text-align: center;
