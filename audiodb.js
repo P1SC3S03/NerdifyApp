@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 //INPUT VERIFICATION/TREATMENT
 function inputVerification(search) {
-    if(!search) {
+    if (!search) {
       return;
     
     }
