@@ -23,7 +23,8 @@ $(document).ready(function () {
 //INPUT VERIFICATION/TREATMENT
 function inputVerification(search) {
     if (!search) {
-        return;
+      return;
+    
     }
 
     search = search.replaceAll(" ", "_");
@@ -43,6 +44,27 @@ function parseResponse(response) {
 function artistInfo(data) {
     const artist = data.artists.map(artist => {
         if (JSON.stringify(artist.strArtist).toLowerCase().includes(JSON.stringify(search))) {
+            if(!artist.strArtistFanart){
+                artist.strArtistFanart = 'No image available';
+            }
+            if(!artist.strBiographyPT){
+                artist.strBiographyPT = 'Sem informação disponível';
+            }
+            if(!artist.strBiographyEN){
+                artist.strBiographyEN = 'No data available';
+            }
+            if(!artist.strCountry) {
+                artist.strCountry = 'Unknown Country';
+            }
+            if(!artist.strCountryCode) { 
+                artist.strCountryCode = 'Unknown Country Code';
+            } 
+            if(!artist.strGenre){
+                artist.strGenre = 'Unkown Genre';
+            }
+            if(!artist.strStyle) {
+                artist.strStyle = 'Unkown Style';
+            }
             return {
                 id: artist.idArtist, name: artist.strArtist, fanart: artist.strArtistFanart,
                 bioPT: artist.strBiographyPT, bioEN: artist.strBiographyEN,
@@ -68,11 +90,14 @@ function renderArtistHTML(data) {
 //FETCH ALBUMS BY ARTIST
 function fetchAlbunsByArtist(data) {
         let info = data.album.map(album => {
+        if(!album.strAlbumThumb) {
+            album.strAlbumThumb = ''; 
+        }
         if (!album.strDescriptionEN) {
             album.strDescriptionEN = 'No data available';
         }
         if (!album.strDescriptionPT) {
-            album.strDescriptionPT = 'No data available';
+            album.strDescriptionPT = 'Sem informação disponível';
         }
         return {
             idAlbum: album.idAlbum, idArtist: album.idArtist,
@@ -100,7 +125,8 @@ function renderTitle(data) {
 
 //RENDER ARTIST IMAGE
 function renderArtistImage(data) {
-    $('#renderImage').html(`<div id="home-image"><img id="image" src="${data[0].fanart}"></div>`);
+    let content = `<div id="home-image"><img id="image" src="${data[0].fanart}"></div>`;
+    $('#renderImage').html(content);
 }
 
 //ARTIST BIO IN PORTUGUESE
