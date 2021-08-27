@@ -32,16 +32,6 @@
 }
 
 
-/*
-#header-subtitle-1,
-#header-subtitle-2 {
-        color: rgb(255, 255, 255);
-}
-*/
-
-
-
-
 #saudation{
     text-align: center;
     color: #CCC;
@@ -108,16 +98,6 @@
     margin-top: 20px;
 }
 
-
-#image-nerd{
-    width: 12%;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    background: url(img/nerd.gif); 
-}
-
 #search-bar{
     margin-top: 15px;
     margin-left: 20px;
@@ -138,10 +118,11 @@
 }
 
 .index{
-    background-image: linear-gradient(to right, black , rgb(105, 125, 115));
+    background-image: url("img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     position: relative;
-    top: 150px;
 }
 
 .title{
@@ -149,6 +130,12 @@
     margin-right: -50px;
     text-align: center;
     font-family: 'Kaisei Opti', serif;
+}
+
+.index-body {
+    position: relative;
+    text-align: center;
+    margin-top: 10%;
 }
 
 #search-text {
