@@ -65,7 +65,7 @@
     let search_query = encodeURI(raw_search_query);
     
     $.ajax({
-      url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=10`,
+      url: `https://api.spotify.com/v1/search?q=${search_query}&type=track,artist,album&limit=8`,
       type: 'GET',
       headers: {
         'Authorization': 'Bearer ' + accessToken
@@ -80,7 +80,7 @@
           let id = data.tracks.items[count].id;
   
           let src_str = `https://open.spotify.com/embed/track/${id}`;
-          let iframe = $(`<div class='songs'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`).insertAfter("#Music");
+          let iframe = `<div class='songs'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="400" width="500" allow="encrypted-media"></iframe></div>`
           let parent_div = $('#song_' + count);
           parent_div.html(iframe);
           count++;
@@ -91,43 +91,64 @@
   
   $("#search_button").on("click", function () {
     $("#menuId").empty();
-    const openHeaders = $(`<button class="tablink" onclick="openPage('Country', this, 'red')">Country</button>
-    <button class="tablink" onclick="openPage('GenreAndStyle', this, 'green')" id="defaultOpen">Genre and Style</button>
-    <button class="tablink" onclick="openPage('BiographyInEnglish', this, 'blue')">Biography in English</button>
-    <button class="tablink" onclick="openPage('BiografiaEmPortuguês', this, 'orange')">Biografia em Português</button>
-    <button class="tablink" onclick="openPage('Albums', this, 'red')">Albums</button>
-    <div id="Country" class="tabcontent">
-      <h3>Country</h3>
+    const openHeaders = $(`<h2>Artist Information</h2>
+
+    <button class="accordion">Country</button>
+    <div class="panel">
+    <div id="Country"></div>
+    </div>
+
+    <button class="accordion">Genre and Style</button>
+    <div class="panel">
+    <div id="GenreAndStyle"></div>
+    </div>
+
+    <button class="accordion">Biograpy in English</button>
+    <div class="panel">
+    <div id="BiographyInEnglish"></div>
+    </div>
+
+    <button class="accordion">Biografia em Português</button>
+    <div class="panel">
+    <div id="BiografiaEmPortuguês"></div>
     </div>
     
-    <div id="GenreAndStyle" class="tabcontent">
-      <h3>Genre and Style</h3>
+    <button class="accordion">Albums</button>
+    <div class="panel">
+    <div id="Albums"></div>
     </div>
-  
-    <div id="BiographyInEnglish" class="tabcontent">
-    <h3>Biography in English</h3>
-    </div>
-    
-    <div id="BiografiaEmPortuguês" class="tabcontent">
-      <h3>Biografia em Português</h3>
-    </div>
-    <div id="Albums" class="tabcontent">
-      <h3>Albums</h3>
-    </div>
-    <div id="Music" class="tabcontent">
-    </div> 
+
     <div id="renderMusic">
-            <div id="song_0" class="col"></div>
-            <div id="song_1" class="col"></div>
-            <div id="song_2" class="col"></div>
-            <div id="song_3" class="col"></div>
-            <div id="song_4" class="col"></div>
-            <div id="song_5" class="col"></div>
-            <div id="song_6" class="col"></div>
-            <div id="song_7" class="col"></div>
-            <div id="song_8" class="col"></div>
-            <div id="song_9" class="col"></div>
+    <div class="div">
+    <div id="song_0" class="col"></div>
+    <div id="song_1" class="col"></div>
+    <div id="song_2" class="col"></div>
+    <div id="song_3" class="col"></div>
+    </div>
+    <div class="div">
+    <div id="song_4" class="col"></div>
+    <div id="song_5" class="col"></div>
+    <div id="song_6" class="col"></div>
+    <div id="song_7" class="col"></div>
+    </div>
+      
+      
+      
     </div>`);
+
     $("#menuId").append(openHeaders);
-  });
+    var acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+});
 });

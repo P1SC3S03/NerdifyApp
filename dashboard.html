@@ -26,15 +26,11 @@
 <body>
   <header>
     <section class="header">
-      <div id="header-container" class="container">
-        <div class="header-body">
-          <img id="header-image" src="img/Nerdify.png">
-          <h1 id="header-title" class="title">Nerdify</h1>
-        </div>
-      </div>
+      <img id="header-image" src="img/Nerdify.png">
+      <h1 id="header-title" class="title">Nerdify</h1>
     </section>
   </header>
-  
+
   <main>
     <div class="columns">
       <div class="col-1">
@@ -51,23 +47,8 @@
           <div id="renderArtistBioEN"></div>
           <div id="renderArtistBioPT"></div>
           <div id="renderAlbum"></div>
+          <div id="renderMusic"></div>
         </div>
-        
-        <script>
-          function openPage(pageName, elmnt, color) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-              tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-              tablinks[i].style.backgroundColor = "";
-            }
-            document.getElementById(pageName).style.display = "block";
-            elmnt.style.backgroundColor = color;
-          }
-        </script>
       </div>
     </div>
   </main>
