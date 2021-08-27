@@ -1,4 +1,4 @@
-$(document).ready(function () {
+  $(document).ready(function () {
 
     const getUrlParameter = (sParam) => {
       let sPageURL = window.location.search.substring(1),
@@ -80,8 +80,8 @@ $(document).ready(function () {
           let id = data.tracks.items[count].id;
   
           let src_str = `https://open.spotify.com/embed/track/${id}`;
-          let iframe = `<div class='song'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`;
-          let parent_div = $('#song_' + count);
+          let iframe = `<div class='songs'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`;
+          let parent_div = $('#Music' + count);
           parent_div.html(iframe);
           count++;
         }
@@ -95,6 +95,7 @@ $(document).ready(function () {
     <button class="tablink" onclick="openPage('BiographyInEnglish', this, 'blue')">Biography in English</button>
     <button class="tablink" onclick="openPage('BiografiaEmPortuguês', this, 'orange')">Biografia em Português</button>
     <button class="tablink" onclick="openPage('Albums', this, 'red')">Albums</button>
+    <button class="tablink" onclick="openPage('Music', this, 'orange')">Music</button>
     <div id="Country" class="tabcontent">
       <h3>Country</h3>
     </div>
@@ -112,6 +113,9 @@ $(document).ready(function () {
     </div>
     <div id="Albums" class="tabcontent">
       <h3>Albums</h3>
+    </div>
+    <div id="Music" class="tabcontent">
+      <h3>Music</h3>
     </div>`);
     $("#menuId").append(openHeaders);
   });

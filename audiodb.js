@@ -22,8 +22,9 @@ $(document).ready(function () {
 
 //INPUT VERIFICATION/TREATMENT
 function inputVerification(search) {
-    if (!search) {
-        return;
+    if(!search) {
+      return;
+    
     }
 
     search = search.replaceAll(" ", "_");
