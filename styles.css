@@ -5,7 +5,8 @@
     background-attachment: fixed;
     background-size: cover;
     position: relative;
-    left:-1%;
+    width: 100%;
+    /*left:-1%;*/
 }
 
 .header-body {

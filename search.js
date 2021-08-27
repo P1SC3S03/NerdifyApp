@@ -80,14 +80,15 @@
           let id = data.tracks.items[count].id;
   
           let src_str = `https://open.spotify.com/embed/track/${id}`;
-          let iframe = `<div class='songs'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`;
-          let parent_div = $('#Music' + count);
+          let iframe = $(`<div class='songs'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="75" allow="encrypted-media"></iframe></div>`).insertAfter("#Music");
+          let parent_div = $('#song_' + count);
           parent_div.html(iframe);
           count++;
         }
       }
     });
   });
+  
   $("#search_button").on("click", function () {
     $("#menuId").empty();
     const openHeaders = $(`<button class="tablink" onclick="openPage('Country', this, 'red')">Country</button>
@@ -95,7 +96,6 @@
     <button class="tablink" onclick="openPage('BiographyInEnglish', this, 'blue')">Biography in English</button>
     <button class="tablink" onclick="openPage('BiografiaEmPortuguês', this, 'orange')">Biografia em Português</button>
     <button class="tablink" onclick="openPage('Albums', this, 'red')">Albums</button>
-    <button class="tablink" onclick="openPage('Music', this, 'orange')">Music</button>
     <div id="Country" class="tabcontent">
       <h3>Country</h3>
     </div>
@@ -115,7 +115,6 @@
       <h3>Albums</h3>
     </div>
     <div id="Music" class="tabcontent">
-      <h3>Music</h3>
     </div>`);
     $("#menuId").append(openHeaders);
   });
