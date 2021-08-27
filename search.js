@@ -115,6 +115,18 @@
       <h3>Albums</h3>
     </div>
     <div id="Music" class="tabcontent">
+    </div> 
+    <div id="renderMusic">
+            <div id="song_0" class="col"></div>
+            <div id="song_1" class="col"></div>
+            <div id="song_2" class="col"></div>
+            <div id="song_3" class="col"></div>
+            <div id="song_4" class="col"></div>
+            <div id="song_5" class="col"></div>
+            <div id="song_6" class="col"></div>
+            <div id="song_7" class="col"></div>
+            <div id="song_8" class="col"></div>
+            <div id="song_9" class="col"></div>
     </div>`);
     $("#menuId").append(openHeaders);
   });

@@ -237,6 +237,14 @@ h3{
     max-width: 250px;
 }
 
+.iframe {
+    width: 25%;
+}
+
+#renderMusic {
+    text-align: center;
+}
+
 #pedro {
     border: 1px solid #ddd;
     border-radius: 4px;
