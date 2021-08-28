@@ -79,12 +79,15 @@ function artistInfo(data) {
 
 //RENDER ARTIST HTML
 function renderArtistHTML(data) {
-    renderTitle(data);
-    renderArtistImage(data);
-    renderArtistBioPT(data);
-    renderArtistBioEN(data);
-    renderArtistCountry(data);
-    renderArtistGenreAndStyle(data);
+    setTimeout(function(){
+        renderTitle(data);
+        renderArtistImage(data);
+        renderArtistBioPT(data);
+        renderArtistBioEN(data); 
+        renderArtistCountry(data);
+        renderAlbums
+        renderArtistGenreAndStyle(data);}, 100); 
+    
 }
 
 //FETCH ALBUMS BY ARTIST
