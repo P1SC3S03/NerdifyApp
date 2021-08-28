@@ -24,7 +24,7 @@ https://developer.spotify.com/documentation/web-api/reference/#objects-index
 https://developer.spotify.com/documentation/general/guides/scopes/
 
 //AudioDB
-https://www.theaudiodb.com/api_guide.php1
+https://www.theaudiodb.com/api_guide.php
 
 --------------------------------------------------------------------------------------
 ✍️ Context on title font in dashboard:
