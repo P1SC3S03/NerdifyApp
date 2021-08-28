@@ -8,10 +8,6 @@
   padding: 10px;
 }
 
-
-
-
-
 .search-btn {
   float: right;
   width: 40px;
@@ -25,9 +21,11 @@
   color: #1db954;
   cursor: pointer;
 }
+
 .search-btn > i {
   font-size: 18px;
 }
+
 .search-txt {
   border: none;
   background: none;

@@ -9,7 +9,6 @@ main{
 }
 
 .header {
-  
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -89,7 +88,6 @@ main{
     display: flex;
 }
 
-
 #image-nerd {
   width: 12%;
   height: 200px;
@@ -100,12 +98,33 @@ main{
 }
 
 .index {
-  background-image: linear-gradient(to right, black, rgb(105, 125, 115));
+  background-image:url("/img/index-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   position: relative;
   top: 150px;
 }
 
+.button {
+  background-color: #17b47b;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-right: -30px;
+}
+
+.title {
+  text-align: center;
+  color: #ccc;
+  margin-right: -40px;
+}
 
 #microphone-image {
   height: 18px;
