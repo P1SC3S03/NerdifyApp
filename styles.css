@@ -1,281 +1,263 @@
-.header {
-    background-image: url("img/LoginImage.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    /*left:-1%;*/
+main{
+    min-height:400px;
 }
 
-.header-body {
-        margin: 0 auto;
-        text-align: center;
+.body{
+  background-image:url("img/background.png");
+  background-repeat:no-repeat;
+  background-size: cover;
 }
-    
+
+.header {
+  
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+
 #header-image {
-        height: 75px;
-        width: 75px;
-        margin-bottom: 5px;
-        margin-top: 5px;
-        border-radius: 8px; 
-        margin-left: 65px;
+  height: 125px;
+  width: 125px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-radius: 8px;
+  margin-left:40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #header-title {
-        color: white;
-        opacity: 0.8;
-        text-align: center;
-        font-family: 'Nothing You Could Do', cursive;
-        font-size: 50px;
+  color: white;
+  opacity: 0.8;
+  text-align: center;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 50px;
+  margin-left: 38%;
+  margin-top:45px;
 }
 
-
-#saudation{
-    text-align: center;
-    color: #CCC;
-    margin-right: -40px;
+#saudation {
+  text-align: center;
+  color: #ccc;
+  margin-right: -40px;
 }
 
 .emoji {
-    font-size: 30px;
-    animation: waving-hand 2.5s infinite;
-    display: inline-block;
+  font-size: 30px;
+  animation: waving-hand 2.5s infinite;
+  display: inline-block;
 }
 
 @keyframes waving-hand {
-    0% {
-        transform: rotate(0deg);
-    }
-    10% {
-        transform: rotate(14deg);
-    }
-    20% {
-        transform: rotate(-8deg);
-    }
-    30% {
-        transform: rotate(14deg);
-    }
-    40% {
-        transform: rotate(-4deg);
-    }
-    50% {
-        transform: rotate(10deg);
-    }
-    60% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-.columns {
+.col-1 {
+  width: 100%;
+  height: 100%;
+}
+
+.div{
     display: flex;
 }
 
-.col-1{
-    width:100%;
-    height: 100%;
+
+#image-nerd {
+  width: 12%;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background: url(img/nerd.gif);
 }
 
-.iframe{
-    width: 100%;
-    margin-top: -5px;
-    
+.index {
+  background-image: linear-gradient(to right, black, rgb(105, 125, 115));
+  text-align: center;
+  position: relative;
+  top: 150px;
 }
 
-.searchText{
-    position: relative;
-    font-family: 'Kaisei Opti', serif;
-    color:white;
-    text-align: center;
-}
-
-.container-1{
-    width:100%;
-    margin-top: 20px;
-}
-
-#search-bar{
-    margin-top: 15px;
-    margin-left: 20px;
-    text-align: center;
-}
-
-.button{
-    font-size: 20px;
-    position: relative;
-    top: 25px;
-    right: -17px;
-    padding: 15px 25px;
-    text-align: center;
-    background-color: #04AA6D;
-    color: #fff;
-    font-family: 'Kaisei Opti', serif;
-    border-radius: 12px;
-}
-
-.index{
-    background-image: url("img/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-    position: relative;
-}
-
-.title{
-    color:rgb(195, 195, 195);
-    margin-right: -50px;
-    text-align: center;
-    font-family: 'Kaisei Opti', serif;
-}
-
-.index-body {
-    position: relative;
-    text-align: center;
-    margin-top: 10%;
-}
-
-#search-text {
-    border-radius: 5px;
-    text-align: center;
-}
-
-#search_button{
-    border-radius: 5px;
-}
 
 #microphone-image {
-    height: 30px;
-    width: 25px;
+  height: 18px;
+  width: 18px;
+  margin-top:11px;
 }
-
-
-
 
 .tablink {
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
-    width: 50%;
-    height:100%;
-    font-family: 'Raleway', sans-serif;
-    position: relative;
-    text-align: center;
-    top: -10%;
-    left: 26%;
-   
-  }
-  .tablink:hover {
-    background-color: #777;
-  
-  }
-  /* Style the tab content (and add height:100% for full page content) */
-  .tabcontent {
-    color: black;
-    display: none;
-    padding: 40px 20px;
-    /* text-align: justify; */
-    text-align: justify;
-    -moz-text-align-last: center;
-    text-align-last: center;
-    font-size:15px;
-    position: relative;
-    left: 1%;
-    
-  }
-  #menuId{
-   position: relative;
-    width: 100%;
-    
-    
-  }
-
-#titleRender{
-    font-size:50px;
-    margin-top: 4%;
-    color:black; 
-    opacity: 0.9;
-    z-index: 1;
-    font-weight: bold; 
-    font-family: 'Nanum Myeongjo', serif;
-    position: relative;
-    left: 0%;
+  background-color: white;
+  color: black;
+  border: none;
+  font-size: 15px;
+  width: 50%;
+  height: 100%;
+  font-family: "Raleway", sans-serif;
+  position: relative;
+  text-align: center;
+  top: -10%;
+  left: 26%;
+}
+.tablink:hover {
+  background-color: #777;
 }
 
-#image{
-    position: relative;
-    width: 37%;
-    height: auto;
-    opacity: 0.8;
-    /* top:50px; */
-    left:32%;
-    
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 40px 20px;
+  /* text-align: justify; */
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  font-size: 15px;
+  position: relative;
+  left: 1%;
 }
-h3{
-    text-align: center;
+#menuId {
+  position: relative;
+  width: 100%;
+}
+
+#titleRender {
+  font-size: 50px;
+  margin-top: 4%;
+  color: black;
+  opacity: 0.9;
+  z-index: 1;
+  font-weight: bold;
+  font-family: "Nanum Myeongjo", serif;
+  position: relative;
+  left: 0%;
+}
+
+#image {
+  position: relative;
+  width: 37%;
+  height: auto;
+  opacity: 0.8;
+  left: 32%;
+}
+h3 {
+  text-align: center;
 }
 
 #album-images {
-    max-width: 250px;
+  max-width: 250px;
+}
+#h2-artist-info{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 
-.iframe {
-    width: 25%;
-}
-
-#renderMusic {
-    text-align: center;
+#h2-Music{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #pedro {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 150px;
-    margin: 0 auto;
-  }
-  
-  #pedro:hover {
-      box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-    }
-  
-  .center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-      
-  }
-  
-  #feedback{
-      
-      margin-right: 70px;
-  }
-  
-  #footer {
-      bottom: 0;
-      width: 100%;
-      height: 2.5rem;  
-      position: relative;
-      left: 1%;
-            
-  }
-  
-  #p-footer{
-      text-align: center;
-  }
-  
-
-
-  /*
-.footer {
-    padding: 1rem 0.5rem 3rem;
-    display: block;
-    width: 50%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  margin: 0 auto;
 }
-*/
+
+#pedro:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#feedback {
+  margin-right: 70px;
+  color: white;
+}
+
+#footer {
+display: block;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  position:relative;
+  left: 1%;
+}
+
+#p-footer {
+  text-align: center;
+  color: white;
+}
+
+.footer-div{
+    bottom: 0;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  .active:after {
+    content: "\2212";
+  }
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
