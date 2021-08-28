@@ -92,7 +92,14 @@
   });
   
   $("#search_button").on("click", function () {
+    let search = $('#search-text').val();
     
+    if(!search) {
+     $("#renderTitle").empty();
+     $("#renderImage").empty();
+    return;
+    }
+
     $("#menuId").empty();
     const openHeaders = $(`<h2 id="h2-artist-info">Artist Information</h2>
 
