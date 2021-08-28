@@ -91,7 +91,7 @@
   
   $("#search_button").on("click", function () {
     $("#menuId").empty();
-    const openHeaders = $(`<h2>Artist Information</h2>
+    const openHeaders = $(`<h2 id="h2-artist-info">Artist Information</h2>
 
     <button class="accordion">Country</button>
     <div class="panel">
@@ -117,7 +117,7 @@
     <div class="panel">
     <div id="Albums"></div>
     </div>
-
+    <h2 id="h2-Music">Music</h2>
     <div id="renderMusic">
     <div class="div">
     <div id="song_0" class="col"></div>

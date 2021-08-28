@@ -3,7 +3,7 @@ main{
 }
 
 body{
-    background-color:#ffffff;
+    background-color:rgb(26, 26, 27);
 }
 
 .header {
@@ -178,11 +178,17 @@ h3 {
 #album-images {
   max-width: 250px;
 }
+#h2-artist-info{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
+}
 
-
-#renderMusic {
-  display: flex;
+#h2-Music{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #pedro {
@@ -206,6 +212,7 @@ h3 {
 
 #feedback {
   margin-right: 70px;
+  color: white;
 }
 
 #footer {
@@ -219,6 +226,7 @@ display: block;
 
 #p-footer {
   text-align: center;
+  color: white;
 }
 
 .footer-div{
