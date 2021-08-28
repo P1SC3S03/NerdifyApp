@@ -7,18 +7,10 @@
   border-radius: 40px;
   padding: 10px;
 }
-.search-bar:hover > .search-txt {
-  width: 240px;
-  padding: 0 6px;
-}
-.search-bar:hover > .search {
-  background: white;
-  color: black;
-}
 
-.search-bar:hover > #microphone-image {
-  margin-top: 3%;
-}
+
+
+
 
 .search-btn {
   float: right;
@@ -46,6 +38,6 @@
   font-size: 16px;
   transition: 0.4s;
   line-height: 40px;
-  width: 0px;
+  width: 240px;
   font-weight: bold;
 }

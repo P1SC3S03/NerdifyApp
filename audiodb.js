@@ -119,6 +119,7 @@ function handleErrors(error) {
 
 //RENDER TITLE
 function renderTitle(data) {
+    console.log(data);
     let content = '<h3 id ="titleRender">'+data[0].name+'</h3>';
     $('#renderTitle').html(content);
 }

@@ -1,4 +1,6 @@
+  
   $(document).ready(function () {
+    
 
     const getUrlParameter = (sParam) => {
       let sPageURL = window.location.search.substring(1),
@@ -80,7 +82,7 @@
           let id = data.tracks.items[count].id;
   
           let src_str = `https://open.spotify.com/embed/track/${id}`;
-          let iframe = `<div class='songs'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="400" width="500" allow="encrypted-media"></iframe></div>`
+          let iframe = `<div class='songs'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="400" width="450" allow="encrypted-media"></iframe></div>`
           let parent_div = $('#song_' + count);
           parent_div.html(iframe);
           count++;
@@ -90,6 +92,7 @@
   });
   
   $("#search_button").on("click", function () {
+    
     $("#menuId").empty();
     const openHeaders = $(`<h2 id="h2-artist-info">Artist Information</h2>
 
@@ -131,15 +134,13 @@
     <div id="song_6" class="col"></div>
     <div id="song_7" class="col"></div>
     </div>
-      
-      
-      
     </div>`);
 
     $("#menuId").append(openHeaders);
+    
     var acc = document.getElementsByClassName("accordion");
-  var i;
-  for (i = 0; i < acc.length; i++) {
+    var i;
+    for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
       this.classList.toggle("active");
       var panel = this.nextElementSibling;
