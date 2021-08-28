@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $('#search-text').change((event) => {
-        let search = event.target.value.toLowerCase();
+    $('#search_button').on('click', () => {
+        let search = $('#search-text').val().toLowerCase();
         inputVerification(search);
 
     //API KEY = 523532
@@ -85,8 +85,7 @@ function renderArtistHTML(data) {
         renderArtistBioPT(data);
         renderArtistBioEN(data); 
         renderArtistCountry(data);
-        renderAlbums
-        renderArtistGenreAndStyle(data);}, 100); 
+        renderArtistGenreAndStyle(data);}, 10); 
     
 }
 
@@ -173,6 +172,7 @@ function renderArtistGenreAndStyle(data) {
 
 //ALBUM INFORMATION (NAME, YEAR, IMAGE, DESCRIPTION_EN, DESCRIPTION_PT)
 function renderAlbums(data) {
+    setTimeout(function() {
     let content = '<h3 id="album-title"><b>Albums</b></h3>';
 
     for (let i=0; i < data.length; i++){
@@ -185,6 +185,7 @@ function renderAlbums(data) {
     }
 
     $('#Albums').html(content);
+},10);
 }
 });
 });
