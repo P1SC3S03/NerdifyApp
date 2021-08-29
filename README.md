@@ -27,6 +27,17 @@ https://developer.spotify.com/documentation/general/guides/scopes/
 https://www.theaudiodb.com/api_guide.php
 
 --------------------------------------------------------------------------------------
+Screenshots
+
+Index:
+![Index](https://user-images.githubusercontent.com/76745343/131263390-70b4968e-1db6-4a10-b432-244940db2ff9.png)
+
+
+Dashboard:
+![Dashboard](https://user-images.githubusercontent.com/76745343/131263394-0b341d12-9b57-49f6-aa2c-c7fbd484da9a.png)
+
+--------------------------------------------------------------------------------------
+
 ✍️ Context on title font in dashboard:
 
 Nothing You Could Do --> Yes, Soraia, 'IT IS WHAT IT IS'! 😈
@@ -36,3 +47,10 @@ Nothing You Could Do --> Yes, Soraia, 'IT IS WHAT IT IS'! 😈
 Kimberly Geswein, font designer
 
 --------------------------------------------------------------------------------------
+Contributors
+
+Catarina Sousa - catarina.sousa@mindswap.academy
+
+Miguel Silva - miguel.silva@mindswap.academy
+
+Pedro Oliveira - pedro.oliveira@mindswap.academy
