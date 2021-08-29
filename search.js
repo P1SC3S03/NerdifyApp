@@ -217,7 +217,7 @@
 
         if(!data.artists) {
           cleanPage();
-          alert('We are sorry... 😔 \n§The artist you are trying to search is not available in our database...');
+          alert('We are sorry... 😔 \nThe artist you are trying to search is not available in our database...');
           return;
         }
           const artist = data.artists.map(artist => {
