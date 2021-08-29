@@ -1,6 +1,7 @@
   
   $(document).ready(function () {
 
+    //GET INFORMATION FROM URL -> EX: ACCESS TOKEN; 
     const getUrlParameter = (sParam) => {
       let sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL != undefined && sPageURL.length > 0 ? sPageURL.split('#') : [],
@@ -18,6 +19,7 @@
       }
     };
   
+    //REDIRECT AFTER AUTHENTICATION AND DELETE TOKEN FROM URL [SECURITY] 
     const accessToken = getUrlParameter('access_token');
     let client_id = 'b1be58a2a84e423e88f88256823a1447';
     let redirect_uri = 'http%3A%2F%2F127.0.0.1%3A5500%2Fdashboard.html';
@@ -28,12 +30,14 @@
       window.location.replace(redirect);
     }
 
+  //REFRESH PAGE 
     function cleanPage() {
       $('#renderTitle').empty();
       $('#renderImage').empty();
       $('#menuId').empty();
     }
 
+    //VERIFY IF ENTER AND MAKE ENTER BE A METHOD INITIATOR AS CLICK IS
     $(document).keyup(function(event) { 
       event.preventDefault();
       if (event.keyCode === 13) { 
@@ -42,7 +46,7 @@
   }); 
 
 
-
+  // SPEACH RECOGNITION
   $("#microphone-image").on("click", function() {
     function startDictation() {
       if (window.hasOwnProperty("webkitSpeechRecognition")) {
@@ -66,6 +70,7 @@
     startDictation();
   }); 
   
+  //GET USER INPUT AND SEARCH ALBUMS ON SPOTIFY
   $("#search_button").click(function () {
     let raw_search_query = $('#search-text').val();
     let search_query = encodeURI(raw_search_query);
@@ -95,6 +100,7 @@
     });
   });
   
+  //ON CLICK GET USER INPUT; IF NOT VALID REFRESH PAGE; IF VALID CREATE HTML STRUCTURE
   $("#search_button").on("click", function () {
     let search = $('#search-text').val();
     
@@ -146,6 +152,7 @@
     </div>
     </div>`);
 
+    // OPEN AND CLOSE ACCORDION TABS
     $("#menuId").append(openHeaders);
     
     var acc = document.getElementsByClassName("accordion");
@@ -162,6 +169,8 @@
     });
   }
 });
+
+    //GET USER INPUT; VERIFY INPUT AND RENDER INFORMATION WITH AUDIODB (ARTIST AND ALBUM DATABASE)
   $('#search_button').on('click', () => {
       let search = $('#search-text').val().toLowerCase();
       inputVerification(search);
@@ -208,7 +217,7 @@
 
         if(!data.artists) {
           cleanPage();
-          alert('We are sorry... 😔 \n The artist you are trying to search is not available in our database...');
+          alert('We are sorry... 😔 \n§The artist you are trying to search is not available in our database...');
           return;
         }
           const artist = data.artists.map(artist => {
