@@ -59,8 +59,6 @@
                 document.getElementById("search-text").value
                     = e.results[0][0].transcript;
                 recognition.stop();                
-                /* let search = document.getElementById("search-text").value;
-                let searchEndPoint = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s='+ search; */
             };
             recognition.onerror = function (e) {
                 recognition.stop();
@@ -88,8 +86,7 @@
         const max_songs = 10;
         while (count < max_songs && count < num_of_tracks) {
           
-          let id = data.tracks.items[count].id;
-  
+          let id = data.tracks.items[count].id; 
           let src_str = `https://open.spotify.com/embed/track/${id}`;
           let iframe = `<div class='songs'><iframe class="iframe" src=${src_str} frameborder="0" allowtransparency="true" height="400" width="450" allow="encrypted-media"></iframe></div>`
           let parent_div = $('#song_' + count);
@@ -175,8 +172,6 @@
       let search = $('#search-text').val().toLowerCase();
       inputVerification(search);
 
-      //API KEY = 523532
-
       const searchArtistUrl = 'https://www.theaudiodb.com/api/v1/json/1/search.php?s=';
       const searchAlbumsByArtistURL = 'https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=';
 
@@ -200,7 +195,6 @@
           }
 
           search = search.replaceAll(" ", "_");
-
           return search;
       }
 
@@ -362,7 +356,6 @@
   <b>Album Description in English:</b> ${data[i].descriptionEN}<br>
   <b>Descrição do Album em Português:</b> ${data[i].descriptionPT}</p>`;
               }
-
               $('#Albums').html(content);
           }, 10);
       }
