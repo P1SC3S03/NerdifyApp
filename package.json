@@ -5,7 +5,8 @@
   "main": "search.js",
   
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,5 @@
   "bugs": {
     "url": "https://github.com/P1SC3S03/NerdifyApp/issues"
   },
-  "homepage": "https://github.com/P1SC3S03/NerdifyApp#readme",
-  "heroku-postbuild": "npm run build"
+  "homepage": "https://github.com/P1SC3S03/NerdifyApp#readme"
 }
