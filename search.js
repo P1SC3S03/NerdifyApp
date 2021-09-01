@@ -126,7 +126,7 @@
 
     <button class="accordion">Biografia em Português</button>
     <div class="panel">
-    <div id="BiografiaEmPortuguês"></div>
+    <div id="BiographyInPortuguese"></div>
     </div>
     
     <button class="accordion">Albums</button>
