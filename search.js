@@ -22,7 +22,7 @@
     //REDIRECT AFTER AUTHENTICATION AND DELETE TOKEN FROM URL [SECURITY] 
     const accessToken = getUrlParameter('access_token');
     let client_id = 'b1be58a2a84e423e88f88256823a1447';
-    let redirect_uri = 'https%3A%2F%2F/nerdify-heroku.herokuapp.com%2Fdashboard.html';
+    let redirect_uri = 'https%3A%2F%2Fnerdify-heroku.herokuapp.com%2Fdashboard.html';
     history.pushState("","", 'dashboard.html');
     const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
   
