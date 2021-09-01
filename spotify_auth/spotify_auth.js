@@ -1,4 +1,4 @@
-var redirect_uri = "http://127.0.0.1:5500/dashboard.html";
+var redirect_uri = "https:///nerdify-heroku.herokuapp.com/dashboard.html";
 
 var client_id = "b1be58a2a84e423e88f88256823a1447"; 
 var client_secret = "557ccc7130b348bebf3134784a5af7e2";
